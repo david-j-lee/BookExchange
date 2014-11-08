@@ -8,7 +8,8 @@
 
     <article>
         <p>        
-            Use this area to provide additional information.
+            Use this area to provide additional information. PLUS this is a book exchange!
+            :D
         </p>
 
         <p>        
