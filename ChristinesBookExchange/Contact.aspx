@@ -8,7 +8,7 @@
 
     <section class="contact">
         <header>
-            <h3>Phone:</h3>
+            <h3>Phone: PHONE TESTING ON CONTACT</h3>
         </header>
         <p>
             <span class="label">Main:</span>
