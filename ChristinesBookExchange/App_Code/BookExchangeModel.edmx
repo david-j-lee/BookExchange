@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BookExchangeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BookExchangeModelStoreContainer">
+          <EntitySet Name="About" EntityType="BookExchangeModel.Store.About" store:Type="Tables" store:Schema="dbo" store:Name="About">
+            <DefiningQuery>SELECT 
+      [About].[Id] AS [Id], 
+      [About].[MessageOne] AS [MessageOne], 
+      [About].[MessageTwo] AS [MessageTwo], 
+      [About].[MessageThree] AS [MessageThree], 
+      [About].[ImageURLOne] AS [ImageURLOne], 
+      [About].[ImageURLTwo] AS [ImageURLTwo], 
+      [About].[ImageURLThree] AS [ImageURLThree], 
+      [About].[EnteredOn] AS [EnteredOn], 
+      [About].[EnteredBy] AS [EnteredBy], 
+      [About].[UpdatedOn] AS [UpdatedOn], 
+      [About].[UpdatedBy] AS [UpdatedBy]
+      FROM [dbo].[About] AS [About]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Home" EntityType="BookExchangeModel.Store.Home" store:Type="Tables" store:Schema="dbo" store:Name="Home">
+            <DefiningQuery>SELECT 
+      [Home].[Id] AS [Id], 
+      [Home].[MessageOne] AS [MessageOne], 
+      [Home].[MessageTwo] AS [MessageTwo], 
+      [Home].[MessageThree] AS [MessageThree], 
+      [Home].[ImageURLOne] AS [ImageURLOne], 
+      [Home].[ImageURLTwo] AS [ImageURLTwo], 
+      [Home].[ImageURLThree] AS [ImageURLThree], 
+      [Home].[EnteredOn] AS [EnteredOn], 
+      [Home].[EnteredBy] AS [EnteredBy], 
+      [Home].[UpdatedOn] AS [UpdatedOn], 
+      [Home].[UpdatedBy] AS [UpdatedBy]
+      FROM [dbo].[Home] AS [Home]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Postings" EntityType="BookExchangeModel.Store.Postings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TradeRequests" EntityType="BookExchangeModel.Store.TradeRequests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReviews" EntityType="BookExchangeModel.Store.UserReviews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="BookExchangeModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Postings_Users" Association="BookExchangeModel.Store.FK_Postings_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Postings" EntitySet="Postings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TradeRequests_Postings" Association="BookExchangeModel.Store.FK_TradeRequests_Postings">
+            <End Role="Postings" EntitySet="Postings" />
+            <End Role="TradeRequests" EntitySet="TradeRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TradeRequests_Users" Association="BookExchangeModel.Store.FK_TradeRequests_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TradeRequests" EntitySet="TradeRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReviews_Users" Association="BookExchangeModel.Store.FK_UserReviews_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserReviews" EntitySet="UserReviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReviews_Users1" Association="BookExchangeModel.Store.FK_UserReviews_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserReviews" EntitySet="UserReviews" />
+          </AssociationSet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\DAVID\DOCUMENTS\GITHUB\BOOKEXCHANGE\CHRISTINESBOOKEXCHANGE\APP_DATA\BOOKEXCHANGE.MDF.dbo.About' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MessageOne" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageTwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageThree" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURLOne" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURLTwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURLThree" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\DAVID\DOCUMENTS\GITHUB\BOOKEXCHANGE\CHRISTINESBOOKEXCHANGE\APP_DATA\BOOKEXCHANGE.MDF.dbo.Home' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MessageOne" Type="nvarchar" MaxLength="500" />
+          <Property Name="MessageTwo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MessageThree" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURLOne" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURLTwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURLThree" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Postings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ISBN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Major" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="TradeRequests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="int" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="PostingId" Type="int" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserReviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Rating" Type="float" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="FromUserId" Type="int" />
+          <Property Name="ForUserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CurrentCollege" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Postings_Users">
+          <End Role="Users" Type="BookExchangeModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Postings" Type="BookExchangeModel.Store.Postings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Postings">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TradeRequests_Postings">
+          <End Role="Postings" Type="BookExchangeModel.Store.Postings" Multiplicity="0..1" />
+          <End Role="TradeRequests" Type="BookExchangeModel.Store.TradeRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TradeRequests">
+              <PropertyRef Name="PostingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TradeRequests_Users">
+          <End Role="Users" Type="BookExchangeModel.Store.Users" Multiplicity="0..1" />
+          <End Role="TradeRequests" Type="BookExchangeModel.Store.TradeRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TradeRequests">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReviews_Users">
+          <End Role="Users" Type="BookExchangeModel.Store.Users" Multiplicity="0..1" />
+          <End Role="UserReviews" Type="BookExchangeModel.Store.UserReviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReviews">
+              <PropertyRef Name="FromUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReviews_Users1">
+          <End Role="Users" Type="BookExchangeModel.Store.Users" Multiplicity="0..1" />
+          <End Role="UserReviews" Type="BookExchangeModel.Store.UserReviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReviews">
+              <PropertyRef Name="ForUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BookExchangeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BookExchangeEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="BookExchangeModel.About" />
+          <EntitySet Name="Homes" EntityType="BookExchangeModel.Home" />
+          <EntitySet Name="Postings" EntityType="BookExchangeModel.Posting" />
+          <EntitySet Name="TradeRequests" EntityType="BookExchangeModel.TradeRequest" />
+          <EntitySet Name="UserReviews" EntityType="BookExchangeModel.UserReview" />
+          <EntitySet Name="Users" EntityType="BookExchangeModel.User" />
+          <AssociationSet Name="FK_Postings_Users" Association="BookExchangeModel.FK_Postings_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Postings" EntitySet="Postings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TradeRequests_Postings" Association="BookExchangeModel.FK_TradeRequests_Postings">
+            <End Role="Postings" EntitySet="Postings" />
+            <End Role="TradeRequests" EntitySet="TradeRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TradeRequests_Users" Association="BookExchangeModel.FK_TradeRequests_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TradeRequests" EntitySet="TradeRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReviews_Users" Association="BookExchangeModel.FK_UserReviews_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserReviews" EntitySet="UserReviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReviews_Users1" Association="BookExchangeModel.FK_UserReviews_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserReviews" EntitySet="UserReviews" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageOne" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MessageTwo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MessageThree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLOne" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLTwo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLThree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageOne" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="MessageTwo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="MessageThree" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLOne" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLTwo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLThree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Posting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ISBN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Major" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Condition" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EnteredOn" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedOn" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="BookExchangeModel.FK_Postings_Users" FromRole="Postings" ToRole="Users" />
+          <NavigationProperty Name="TradeRequests" Relationship="BookExchangeModel.FK_TradeRequests_Postings" FromRole="Postings" ToRole="TradeRequests" />
+        </EntityType>
+        <EntityType Name="TradeRequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="RequestDate" Type="DateTime" Precision="3" />
+          <Property Name="PostingId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="Posting" Relationship="BookExchangeModel.FK_TradeRequests_Postings" FromRole="TradeRequests" ToRole="Postings" />
+          <NavigationProperty Name="User" Relationship="BookExchangeModel.FK_TradeRequests_Users" FromRole="TradeRequests" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserReview">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Rating" Type="Double" />
+          <Property Name="Comment" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="FromUserId" Type="Int32" />
+          <Property Name="ForUserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="BookExchangeModel.FK_UserReviews_Users" FromRole="UserReviews" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="BookExchangeModel.FK_UserReviews_Users1" FromRole="UserReviews" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CurrentCollege" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Postings" Relationship="BookExchangeModel.FK_Postings_Users" FromRole="Users" ToRole="Postings" />
+          <NavigationProperty Name="TradeRequests" Relationship="BookExchangeModel.FK_TradeRequests_Users" FromRole="Users" ToRole="TradeRequests" />
+          <NavigationProperty Name="UserReviews" Relationship="BookExchangeModel.FK_UserReviews_Users" FromRole="Users" ToRole="UserReviews" />
+          <NavigationProperty Name="UserReviews1" Relationship="BookExchangeModel.FK_UserReviews_Users1" FromRole="Users" ToRole="UserReviews" />
+        </EntityType>
+        <Association Name="FK_Postings_Users">
+          <End Role="Users" Type="BookExchangeModel.User" Multiplicity="0..1" />
+          <End Role="Postings" Type="BookExchangeModel.Posting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Postings">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TradeRequests_Postings">
+          <End Role="Postings" Type="BookExchangeModel.Posting" Multiplicity="0..1" />
+          <End Role="TradeRequests" Type="BookExchangeModel.TradeRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Postings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TradeRequests">
+              <PropertyRef Name="PostingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TradeRequests_Users">
+          <End Role="Users" Type="BookExchangeModel.User" Multiplicity="0..1" />
+          <End Role="TradeRequests" Type="BookExchangeModel.TradeRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TradeRequests">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReviews_Users">
+          <End Role="Users" Type="BookExchangeModel.User" Multiplicity="0..1" />
+          <End Role="UserReviews" Type="BookExchangeModel.UserReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReviews">
+              <PropertyRef Name="FromUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReviews_Users1">
+          <End Role="Users" Type="BookExchangeModel.User" Multiplicity="0..1" />
+          <End Role="UserReviews" Type="BookExchangeModel.UserReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserReviews">
+              <PropertyRef Name="ForUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BookExchangeModelStoreContainer" CdmEntityContainer="BookExchangeEntities">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="BookExchangeModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MessageOne" ColumnName="MessageOne" />
+                <ScalarProperty Name="MessageTwo" ColumnName="MessageTwo" />
+                <ScalarProperty Name="MessageThree" ColumnName="MessageThree" />
+                <ScalarProperty Name="ImageURLOne" ColumnName="ImageURLOne" />
+                <ScalarProperty Name="ImageURLTwo" ColumnName="ImageURLTwo" />
+                <ScalarProperty Name="ImageURLThree" ColumnName="ImageURLThree" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homes">
+            <EntityTypeMapping TypeName="BookExchangeModel.Home">
+              <MappingFragment StoreEntitySet="Home">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MessageOne" ColumnName="MessageOne" />
+                <ScalarProperty Name="MessageTwo" ColumnName="MessageTwo" />
+                <ScalarProperty Name="MessageThree" ColumnName="MessageThree" />
+                <ScalarProperty Name="ImageURLOne" ColumnName="ImageURLOne" />
+                <ScalarProperty Name="ImageURLTwo" ColumnName="ImageURLTwo" />
+                <ScalarProperty Name="ImageURLThree" ColumnName="ImageURLThree" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Postings">
+            <EntityTypeMapping TypeName="BookExchangeModel.Posting">
+              <MappingFragment StoreEntitySet="Postings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TradeRequests">
+            <EntityTypeMapping TypeName="BookExchangeModel.TradeRequest">
+              <MappingFragment StoreEntitySet="TradeRequests">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="PostingId" ColumnName="PostingId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReviews">
+            <EntityTypeMapping TypeName="BookExchangeModel.UserReview">
+              <MappingFragment StoreEntitySet="UserReviews">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="FromUserId" ColumnName="FromUserId" />
+                <ScalarProperty Name="ForUserId" ColumnName="ForUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BookExchangeModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CurrentCollege" ColumnName="CurrentCollege" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
