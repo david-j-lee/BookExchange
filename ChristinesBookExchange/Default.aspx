@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <p>input link to database for content here</p>
+    <h3 style="text-align: center">
+        <asp:TextBox ID="TextBox1" runat="server" Width="700px" Height="30px"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Search" Width="100px" Height="35px" />
+    </h3>    
 </asp:Content>
 

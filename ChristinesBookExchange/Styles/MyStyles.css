@@ -1,19 +1,56 @@
-﻿.wrapper {
-    background-color: #c5cdff;
-    max-width: 1200px;
+﻿html {
+    background-color: #c6c5c5;    
+}
+
+body {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+
+
+.wrapper {
+    
 }
 
 header {
     background-color: #2443fe;
     color: #fff;    
-    padding: 1px 20px 1px 20px;
+    padding: 5px 10px 1px 25px;
 }
+
+    .signIn {
+        float: right;
+    }
+
+nav {
+    background-color: #fee949;
+    height: 30px;    
+    font-weight: bold;
+    word-spacing: 50px;
+}
+
+    .navLeft {
+        float: left;
+        padding-left: 50px;
+        padding-top: 5px;
+    }
+
 .body {
+    max-width: 1000px;
     padding: 1px 40px 1px 40px;
+    background-color: #c5cdff;    
+    margin: auto;
 }
 
 footer {
     background-color: #2443fe;
     color: #fff;    
     padding: 1px 20px 1px 20px;
+    text-align: right;
+}
+
+.clearing {
+    clear: both;
 }

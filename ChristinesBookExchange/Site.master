@@ -12,10 +12,20 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="wrapper">
+        <div class="wrapper">            
             <header>
-                <h1>Christine's Book Exchange</h1>
+                <div class="signIn">                    
+                    <asp:HyperLink ID="HyperLink1" runat="server">Sign In</asp:HyperLink>
+                </div>
+                <h1>Christine's Book Exchange</h1>                
             </header>
+            <nav>
+                <div class="navLeft">
+                    <asp:HyperLink ID="HyperLink2" runat="server">Home</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server">Search</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server">Post</asp:HyperLink>                    
+                </div>                                
+            </nav>
             <div class="body">    
                 <asp:ContentPlaceHolder id="MainContent" runat="server">
        
