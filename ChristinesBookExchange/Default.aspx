@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <h3 style="text-align: center">
-        <asp:TextBox ID="TextBox1" runat="server" Width="700px" Height="30px"></asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server" Width="700px" Height="30px" Font-Size="16pt"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" Text="Search" Width="100px" Height="35px" />
     </h3>    
 </asp:Content>

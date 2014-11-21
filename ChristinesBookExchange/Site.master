@@ -17,13 +17,14 @@
                 <div class="signIn">                    
                     <asp:HyperLink ID="HyperLink1" runat="server">Sign In</asp:HyperLink>
                 </div>
-                <h1>Christine's Book Exchange</h1>                
+                <h1 style="font-size: 32pt">Christine's Book Exchange</h1>                
             </header>
             <nav>
                 <div class="navLeft">
-                    <asp:HyperLink ID="HyperLink2" runat="server">Home</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink3" runat="server">Search</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink4" runat="server">Post</asp:HyperLink>                    
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Searching/Default.aspx">Search</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Posting/Default.aspx">Post</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
                 </div>                                
             </nav>
             <div class="body">    
