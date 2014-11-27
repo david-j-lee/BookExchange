@@ -10,22 +10,25 @@ public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+    }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
         string _email = txtEmail.Text;
         string _password = txtPassword.Text;
         using (BookExchangeEntities myEntity = new BookExchangeEntities())
         {
             var user = (from u in myEntity.Users
-                            where u.Email == _email && u.Password == _password
-                            select u).SingleOrDefault();
+                        where u.Email == _email && u.Password == _password
+                        select u).SingleOrDefault();
             if (user != null)
             {
                 Session["email"] = _email;
-                //lblError.Text = Session["usertype"].ToString();
                 Response.Redirect("~/Default.aspx");
             }
             else
             {
-                // lblError.Text = "Username or password doesn't match.  Please try again.";
+                lblError.Text = "Username or password doesn't match.  Please try again.";
             }
         }
     }

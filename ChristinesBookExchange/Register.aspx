@@ -26,12 +26,12 @@
         </tr>
         <tr>
             <td>Password</td>
-            <td><asp:TextBox ID="txtPassword1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="txtPassword1" runat="server" TextMode="Password"></asp:TextBox></td>
             <td></td>
         </tr>
         <tr>
             <td>Re-Type Password</td>
-            <td><asp:TextBox ID="txtPassword2" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="txtPassword2" runat="server" TextMode="Password"></asp:TextBox></td>
             <td></td>
         </tr>
         <tr>

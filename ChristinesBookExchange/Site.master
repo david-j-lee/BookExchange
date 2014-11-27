@@ -15,9 +15,10 @@
         <div class="wrapper">            
             <header>
                 <div class="registerOrSignIn">
+                    <asp:HyperLink ID="HyperLink8" runat="server">Hello!</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink>
                     &nbsp;
-                    &nbsp;
+                    |
                     &nbsp;
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx"></asp:HyperLink>
                     
@@ -27,8 +28,8 @@
             <nav>
                 <div class="navLeft">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Searching/Default.aspx">Search</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Posting/Default.aspx">Post</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/User/Search/Default.aspx">Search</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/User/Post/Default.aspx">Post</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
                 </div>                                
             </nav>
