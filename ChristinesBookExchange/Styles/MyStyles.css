@@ -7,42 +7,62 @@ body {
     margin: 0px 0px 0px 0px;
 }
 
+table {
+    margin: auto;
+    padding: 20px;
+}
 
+td {
+    padding: 10px;
+}
 
-
-.wrapper {
-    
+.wrapper {    
+    min-width: 1000px;    
 }
 
 header {
-    background-color: #2443fe;
+    background-color: #c3c3c3;
     color: #fff;    
     padding: 5px 10px 1px 25px;
+    white-space: nowrap;
 }
 
-    .signIn {
-        float: right;
-    }
+.headerTitle a:visited, .headerTitle a:active, .headerTitle a:hover, .headerTitle a:link {
+    font-size: 32pt;
+    text-decoration: none;
+    color: white;
+}
 
 nav {
-    background-color: #fee949;
+    background-color: #ffffff;
     height: 35px;    
     font-weight: bold;
     word-spacing: 50px;
+    white-space: nowrap;    
 }
 
-    .navLeft {
-        float: left;
-        padding-left: 50px;
-        padding-top: 5px;
-        font-size: 16pt;
+.navLeft {
+    float: left;
+    padding-left: 50px;
+    padding-top: 5px;
+    font-size: 16pt;
+    font-family: Calibri;        
+}
+    .navLeft a:visited, .navLeft a:active, .navLeft a:link {
+        text-decoration: none;
+        color: black;
+        font-family: Calibri;
+    }
+    .navLeft a:hover{
+        text-decoration: underline;
+        color: blue;
         font-family: Calibri;
     }
 
 .body {
-    max-width: 1000px;
+    max-width: 1200px;    
     padding: 1px 40px 1px 40px;
-    background-color: #c5cdff;    
+    background-color: #d9d9d9;    
     margin: auto;
 }
 
@@ -56,3 +76,16 @@ footer {
 .clearing {
     clear: both;
 }
+
+.registerOrSignIn {
+    float: right;
+}
+
+    .registerOrSignIn a:link, .registerOrSignIn a:visited, .registerOrSignIn a:active {
+        color: white;    
+        text-decoration: none;
+    }
+    .registerOrSignIn a:hover {
+        color: blue;    
+        text-decoration: underline;
+    }

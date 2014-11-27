@@ -14,10 +14,14 @@
     <form id="form1" runat="server">
         <div class="wrapper">            
             <header>
-                <div class="signIn">                    
-                    <asp:HyperLink ID="HyperLink1" runat="server">Sign In</asp:HyperLink>
+                <div class="registerOrSignIn">
+                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Sign In</asp:HyperLink>
                 </div>
-                <h1 style="font-size: 32pt">Christine's Book Exchange</h1>                
+                <h1 class="headerTitle"><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Default.aspx">Christine's Book Exchange</asp:HyperLink></h1>                
             </header>
             <nav>
                 <div class="navLeft">

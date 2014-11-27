@@ -9,6 +9,11 @@ public partial class Posting_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if(Session["Email"] != null) {
 
+        }
+        else {
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }
