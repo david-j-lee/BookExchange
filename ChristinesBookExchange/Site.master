@@ -19,7 +19,8 @@
                     &nbsp;
                     &nbsp;
                     &nbsp;
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Sign In</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx"></asp:HyperLink>
+                    
                 </div>
                 <h1 class="headerTitle"><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Default.aspx">Christine's Book Exchange</asp:HyperLink></h1>                
             </header>

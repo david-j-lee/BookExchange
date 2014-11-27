@@ -1,4 +1,4 @@
-USE [BookExchange]
+USE [F:\DOCUMENTS\GITHUB\BOOKEXCHANGE\CHRISTINESBOOKEXCHANGE\APP_DATA\BOOKEXCHANGE.MDF]
 GO
 
 DROP TABLE Home
@@ -30,20 +30,6 @@ DROP TABLE Users
 		[UpdatedBy] [int] NULL
 		) ON [PRIMARY]
 	GO
-	
-	ALTER TABLE [dbo].[Home]  
-		WITH CHECK ADD CONSTRAINT [FK_Home_Users] FOREIGN KEY([EnteredBy])REFERENCES [dbo].[Users] ([Id])
-	GO
-
-	ALTER TABLE [dbo].[Home] CHECK CONSTRAINT [FK_Home_Users]
-	GO
-
-	ALTER TABLE [dbo].[Home]  
-		WITH CHECK ADD CONSTRAINT [FK_Home_Users1] FOREIGN KEY([UpdatedBy])REFERENCES [dbo].[Users] ([Id])
-	GO
-
-	ALTER TABLE [dbo].[Home] CHECK CONSTRAINT [FK_Home_Users1]
-	GO
 
 /****** Object:  Table [dbo].[About]    Script Date: 11/13/2014 7:55:58 PM ******/
 
@@ -67,20 +53,6 @@ DROP TABLE Users
 		[UpdatedBy] [int] NULL
 		) ON [PRIMARY]
 	GO
-	
-	ALTER TABLE [dbo].[About]  
-		WITH CHECK ADD CONSTRAINT [FK_About_Users] FOREIGN KEY([EnteredBy])REFERENCES [dbo].[Users] ([Id])
-	GO
-
-	ALTER TABLE [dbo].[About] CHECK CONSTRAINT [FK_About_Users]
-	GO
-
-	ALTER TABLE [dbo].[About]  
-		WITH CHECK ADD CONSTRAINT [FK_About_Users1] FOREIGN KEY([UpdatedBy])REFERENCES [dbo].[Users] ([Id])
-	GO
-
-	ALTER TABLE [dbo].[About] CHECK CONSTRAINT [FK_About_Users1]
-	GO
 
 /****** Object:  Table [dbo].[Users]    Script Date: 11/13/2014 7:58:45 PM ******/
 
@@ -91,8 +63,7 @@ DROP TABLE Users
 	GO
 
 	CREATE TABLE [dbo].[Users](
-		[Id] [int] IDENTITY(1,1) NOT NULL,
-		[Email] [nvarchar](50) NULL,
+		[Email] [nvarchar](50) NOT NULL,
 		[FirstName] [nvarchar](50) NULL,
 		[LastName] [nvarchar](50) NULL,
 		[Password] [nvarchar](50) NULL,
@@ -102,7 +73,7 @@ DROP TABLE Users
 		[ImageURL] [nvarchar](50) NULL,
 		[Description] [nvarchar](50) NULL,
 		[CreatedOn] [datetime] NULL,
-		CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
+		CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Email] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
 			IGNORE_DUP_KEY = OFF, 
@@ -125,8 +96,8 @@ DROP TABLE Users
 		[Rating] [float] NULL,
 		[Comment] [nvarchar](50) NULL,
 		[Date] [datetime] NULL,
-		[FromUserId] [int] NULL,
-		[ForUserId] [int] NULL,
+		[FromUserEmail] [nvarchar](50) NULL,
+		[ForUserEmail] [nvarchar](50) NULL,
 		CONSTRAINT [PK_UserReviews] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -138,14 +109,14 @@ DROP TABLE Users
 	GO
 		
 	ALTER TABLE [dbo].[UserReviews]  
-		WITH CHECK ADD CONSTRAINT [FK_UserReviews_Users] FOREIGN KEY([FromUserId])REFERENCES [dbo].[Users] ([Id])
+		WITH CHECK ADD CONSTRAINT [FK_UserReviews_Users] FOREIGN KEY([FromUserEmail])REFERENCES [dbo].[Users] ([Email])
 	GO
 
 	ALTER TABLE [dbo].[UserReviews] CHECK CONSTRAINT [FK_UserReviews_Users]
 	GO
 
 	ALTER TABLE [dbo].[UserReviews]  
-		WITH CHECK ADD  CONSTRAINT [FK_UserReviews_Users1] FOREIGN KEY([ForUserId])REFERENCES [dbo].[Users] ([Id])
+		WITH CHECK ADD  CONSTRAINT [FK_UserReviews_Users1] FOREIGN KEY([ForUserEmail])REFERENCES [dbo].[Users] ([Email])
 	GO
 
 	ALTER TABLE [dbo].[UserReviews] CHECK CONSTRAINT [FK_UserReviews_Users1]
@@ -171,7 +142,7 @@ DROP TABLE Users
 		[ImageURL] [nvarchar](50) NULL,
 		[EnteredOn] [nvarchar](50) NULL,
 		[UpdatedOn] [nvarchar](50) NULL,
-		[UserId] [int] NULL,
+		[UserEmail] [nvarchar](50) NULL,
 		CONSTRAINT [PK_Postings] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -183,7 +154,7 @@ DROP TABLE Users
 	GO
 	
 	ALTER TABLE [dbo].[Postings]  
-		WITH CHECK ADD CONSTRAINT [FK_Postings_Users] FOREIGN KEY([UserId])REFERENCES [dbo].[Users] ([Id])
+		WITH CHECK ADD CONSTRAINT [FK_Postings_Users] FOREIGN KEY([UserEmail])REFERENCES [dbo].[Users] ([Email])
 	GO
 
 	ALTER TABLE [dbo].[Postings] CHECK CONSTRAINT [FK_Postings_Users]
@@ -202,7 +173,7 @@ DROP TABLE Users
 		[Status] [int] NULL,
 		[RequestDate] [datetime] NULL,
 		[PostingId] [int] NULL,
-		[UserId] [int] NULL,		
+		[UserEmail] [nvarchar](50) NULL,		
 		CONSTRAINT [PK_TradeRequests] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -221,7 +192,7 @@ DROP TABLE Users
 	GO
 	
 	ALTER TABLE [dbo].[TradeRequests]  
-		WITH CHECK ADD CONSTRAINT [FK_TradeRequests_Users] FOREIGN KEY([UserId])	REFERENCES [dbo].[Users] ([Id])
+		WITH CHECK ADD CONSTRAINT [FK_TradeRequests_Users] FOREIGN KEY([UserEmail])	REFERENCES [dbo].[Users] ([Email])
 	GO
 	
 	ALTER TABLE [dbo].[TradeRequests] CHECK CONSTRAINT [FK_TradeRequests_Users]

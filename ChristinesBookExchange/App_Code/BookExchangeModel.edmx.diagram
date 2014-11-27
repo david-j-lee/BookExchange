@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2b5e8b023fe54b1a872e1e1357d3deb1" Name="Diagram1">
+      <Diagram DiagramId="ddfddf473dd8447f9be3a2c48efe8251" Name="Diagram1">
         <EntityTypeShape EntityType="BookExchangeModel.About" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookExchangeModel.Home" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookExchangeModel.Posting" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookExchangeModel.TradeRequest" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookExchangeModel.TradeRequest" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BookExchangeModel.UserReview" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookExchangeModel.User" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookExchangeModel.User" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="BookExchangeModel.FK_Postings_Users" ManuallyRouted="false" />
         <AssociationConnector Association="BookExchangeModel.FK_TradeRequests_Postings" ManuallyRouted="false" />
         <AssociationConnector Association="BookExchangeModel.FK_TradeRequests_Users" ManuallyRouted="false" />
