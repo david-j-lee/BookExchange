@@ -41,6 +41,10 @@
         </tr>
         <tr>
             <td></td>
+            <td><asp:FileUpload ID="FileUpload1" runat="server" /></td>
+        </tr>
+        <tr>
+            <td></td>
             <td style="text-align: center;"><asp:Button ID="btnPost" runat="server" Text="Post" /></td>            
             <td></td>
         </tr>
