@@ -70,7 +70,7 @@ DROP TABLE Users
 		[City] [nvarchar](50) NULL,
 		[Phone] [nvarchar](50) NULL,
 		[CurrentCollege] [nvarchar](50) NULL,
-		[ImageURL] [nvarchar](50) NULL,
+		[ImageURL] [nvarchar](200) NULL,
 		[Description] [nvarchar](50) NULL,
 		[CreatedOn] [datetime] NULL,
 		CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Email] ASC) WITH (

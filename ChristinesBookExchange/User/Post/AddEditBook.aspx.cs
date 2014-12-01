@@ -90,7 +90,7 @@ public partial class Posting_TradeYourBook : System.Web.UI.Page
             // Image
             if (FileUpload1.HasFile)
             {
-                string virtualFolder = "~/Posting_Images/";
+                string virtualFolder = "~/Images/Postings/";
                 string physicalFolder = Server.MapPath(virtualFolder);
                 string fileName = Guid.NewGuid().ToString();
                 string extension = System.IO.Path.GetExtension(FileUpload1.FileName);

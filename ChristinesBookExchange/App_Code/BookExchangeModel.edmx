@@ -148,7 +148,7 @@
           <Property Name="City" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="CurrentCollege" Type="nvarchar" MaxLength="50" />
-          <Property Name="ImageURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="200" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="datetime" />
         </EntityType>
@@ -332,7 +332,7 @@
           <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="CurrentCollege" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="CreatedOn" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Postings" Relationship="BookExchangeModel.FK_Postings_Users" FromRole="Users" ToRole="Postings" />

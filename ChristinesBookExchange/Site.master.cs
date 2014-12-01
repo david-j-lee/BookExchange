@@ -14,7 +14,7 @@ public partial class Site : System.Web.UI.MasterPage
         {
             HyperLink1.Text = "Sign Out";
             HyperLink1.NavigateUrl = "~/SignOut.aspx";
-            HyperLink8.NavigateUrl = "~/User/Profile/Default.aspx";
+            HyperLink8.NavigateUrl = "~/User/Profile/MyProfile.aspx";
             HyperLink6.Visible = false;
             HyperLink8.Visible = true;
 
