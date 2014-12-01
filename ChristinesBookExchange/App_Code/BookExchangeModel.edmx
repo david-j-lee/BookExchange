@@ -109,11 +109,11 @@
           <Property Name="Major" Type="nvarchar" MaxLength="50" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Author" Type="nvarchar" MaxLength="50" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="decimal" />
           <Property Name="Condition" Type="nvarchar" MaxLength="50" />
           <Property Name="ImageURL" Type="nvarchar" MaxLength="50" />
-          <Property Name="EnteredOn" Type="nvarchar" MaxLength="50" />
-          <Property Name="UpdatedOn" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
           <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TradeRequests">
@@ -287,11 +287,11 @@
           <Property Name="Major" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Author" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Price" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Condition" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="ImageURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="EnteredOn" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="UpdatedOn" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
           <Property Name="UserEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="User" Relationship="BookExchangeModel.FK_Postings_Users" FromRole="Postings" ToRole="Users" />
           <NavigationProperty Name="TradeRequests" Relationship="BookExchangeModel.FK_TradeRequests_Postings" FromRole="Postings" ToRole="TradeRequests" />

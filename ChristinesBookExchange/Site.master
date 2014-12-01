@@ -29,7 +29,7 @@
                 <div class="navLeft">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/User/Search/Default.aspx">Search</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/User/Post/PostYourBook.aspx">Post</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/User/Post/AddEditBook.aspx">Post</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
                 </div>                                
             </nav>

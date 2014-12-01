@@ -1000,7 +1000,7 @@ namespace BookExchangeModel
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Price
+        public Nullable<global::System.Decimal> Price
         {
             get
             {
@@ -1010,13 +1010,13 @@ namespace BookExchangeModel
             {
                 OnPriceChanging(value);
                 ReportPropertyChanging("Price");
-                _Price = StructuralObject.SetValidValue(value, true, "Price");
+                _Price = StructuralObject.SetValidValue(value, "Price");
                 ReportPropertyChanged("Price");
                 OnPriceChanged();
             }
         }
-        private global::System.String _Price;
-        partial void OnPriceChanging(global::System.String value);
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
         partial void OnPriceChanged();
     
         /// <summary>
@@ -1072,7 +1072,7 @@ namespace BookExchangeModel
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String EnteredOn
+        public Nullable<global::System.DateTime> EnteredOn
         {
             get
             {
@@ -1082,13 +1082,13 @@ namespace BookExchangeModel
             {
                 OnEnteredOnChanging(value);
                 ReportPropertyChanging("EnteredOn");
-                _EnteredOn = StructuralObject.SetValidValue(value, true, "EnteredOn");
+                _EnteredOn = StructuralObject.SetValidValue(value, "EnteredOn");
                 ReportPropertyChanged("EnteredOn");
                 OnEnteredOnChanged();
             }
         }
-        private global::System.String _EnteredOn;
-        partial void OnEnteredOnChanging(global::System.String value);
+        private Nullable<global::System.DateTime> _EnteredOn;
+        partial void OnEnteredOnChanging(Nullable<global::System.DateTime> value);
         partial void OnEnteredOnChanged();
     
         /// <summary>
@@ -1096,7 +1096,7 @@ namespace BookExchangeModel
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String UpdatedOn
+        public Nullable<global::System.DateTime> UpdatedOn
         {
             get
             {
@@ -1106,13 +1106,13 @@ namespace BookExchangeModel
             {
                 OnUpdatedOnChanging(value);
                 ReportPropertyChanging("UpdatedOn");
-                _UpdatedOn = StructuralObject.SetValidValue(value, true, "UpdatedOn");
+                _UpdatedOn = StructuralObject.SetValidValue(value, "UpdatedOn");
                 ReportPropertyChanged("UpdatedOn");
                 OnUpdatedOnChanged();
             }
         }
-        private global::System.String _UpdatedOn;
-        partial void OnUpdatedOnChanging(global::System.String value);
+        private Nullable<global::System.DateTime> _UpdatedOn;
+        partial void OnUpdatedOnChanging(Nullable<global::System.DateTime> value);
         partial void OnUpdatedOnChanged();
     
         /// <summary>

@@ -41,11 +41,15 @@
         </tr>
         <tr>
             <td></td>
+            <td><asp:Image ID="Image1" runat="server" /></td>            
+        </tr>
+        <tr>
+            <td></td>
             <td><asp:FileUpload ID="FileUpload1" runat="server" /></td>
         </tr>
         <tr>
             <td></td>
-            <td style="text-align: center;"><asp:Button ID="btnPost" runat="server" Text="Post" /></td>            
+            <td style="text-align: center;"><asp:Button ID="btnPost" runat="server" Text="Post" OnClick="btnPost_Click" /></td>            
             <td></td>
         </tr>
     </table>
