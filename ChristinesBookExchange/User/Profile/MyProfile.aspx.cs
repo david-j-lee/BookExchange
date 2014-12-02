@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookExchangeModel;
 
-public partial class User_Profile_Default : System.Web.UI.Page
+public partial class User_Profile_MyProfile : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -27,6 +27,15 @@ public partial class User_Profile_Default : System.Web.UI.Page
                 lblPhone.Text = users.Phone;
 
                 Image1.ImageUrl = users.ImageURL;
+
+
+                var postings = from p in myEntity.Postings
+                               where p.UserEmail == email
+                               orderby p.EnteredOn descending
+                               select new { p.Id, p.Title };
+
+                Repeater1.DataSource = postings;
+                Repeater1.DataBind();
             }
         }
         else

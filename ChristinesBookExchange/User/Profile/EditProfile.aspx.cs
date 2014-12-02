@@ -6,31 +6,43 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookExchangeModel;
 
-public partial class User_Profile_Default : System.Web.UI.Page
+public partial class User_Profile_EditProfile : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        using (BookExchangeEntities myEntity = new BookExchangeEntities())
+        string email;
+        if (Session["email"] != null)
         {
-            string email = Session["email"].ToString();
+            email = Session["email"].ToString();
+        }
+        else
+        {
+            email = "";
+        }
 
-            var user = (from u in myEntity.Users
-                        where u.Email == email
-                        select u).SingleOrDefault();
+        if (!IsPostBack && email != "")
+        {
+            using (BookExchangeEntities myEntity = new BookExchangeEntities())
+            {                
+                var user = (from u in myEntity.Users
+                            where u.Email == email
+                            select u).SingleOrDefault();
 
-            if (user != null)
-            {
-                txtFirstName.Text = user.FirstName;
-                txtLastName.Text = user.LastName;
-                txtCurrentCollege.Text = user.CurrentCollege;
-                txtCity.Text = user.City;
-                txtPhone.Text = user.Phone;
-                txtDescription.Text = user.Description;
+                if (user != null)
+                {
+                    txtFirstName.Text = user.FirstName;
+                    txtLastName.Text = user.LastName;
+                    txtCurrentCollege.Text = user.CurrentCollege;
+                    txtCity.Text = user.City;
+                    txtPhone.Text = user.Phone;
+                    txtDescription.Text = user.Description;
 
-                Image1.ImageUrl = user.ImageURL;
+                    Image1.ImageUrl = user.ImageURL;
+                }
             }
         }
     }
+
     protected void btnSave_Click(object sender, EventArgs e)
     {
         string email = Session["email"].ToString();
@@ -65,4 +77,5 @@ public partial class User_Profile_Default : System.Web.UI.Page
             Response.Redirect("~/User/Profile/MyProfile.aspx");
         }        
     }
+
 }

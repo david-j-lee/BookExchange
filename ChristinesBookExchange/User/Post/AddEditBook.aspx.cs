@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookExchangeModel;
 
-public partial class Posting_TradeYourBook : System.Web.UI.Page
+public partial class Post_AddEditBook : System.Web.UI.Page
 {
     int _id = -1;
 
@@ -23,6 +23,8 @@ public partial class Posting_TradeYourBook : System.Web.UI.Page
             // if update
             if (!IsPostBack && _id > -1)
             {
+                btnPost.Text = "Save";
+
                 using (BookExchangeEntities myEntity = new BookExchangeEntities())
                 {
                     var posting = (from p in myEntity.Postings
@@ -36,7 +38,7 @@ public partial class Posting_TradeYourBook : System.Web.UI.Page
                         txtMajor.Text = posting.Major;
                         txtTitle.Text = posting.Title;
                         txtAuthor.Text = posting.Author;
-                        txtExpectedValue.Text = posting.Description.ToString();                        
+                        txtExpectedValue.Text = posting.Price.ToString();                        
 
                         //ddlCondition.DataBind();
                         //ListItem myItem = ddlCondition.Items.FindByValue(posting.Condition.ToString());

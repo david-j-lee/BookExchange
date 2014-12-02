@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddEditBook.aspx.cs" Inherits="Posting_TradeYourBook" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddEditBook.aspx.cs" Inherits="Post_AddEditBook" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Image ID="Image1" runat="server" /></td>            
+            <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px"/></td>            
         </tr>
         <tr>
             <td></td>
