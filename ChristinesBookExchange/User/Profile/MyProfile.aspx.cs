@@ -16,6 +16,7 @@ public partial class User_Profile_MyProfile : System.Web.UI.Page
 
             using (BookExchangeEntities myEntity = new BookExchangeEntities())
             {
+                // Users
                 var users = (from u in myEntity.Users
                              where u.Email == email
                              select u).SingleOrDefault();
@@ -28,11 +29,11 @@ public partial class User_Profile_MyProfile : System.Web.UI.Page
 
                 Image1.ImageUrl = users.ImageURL;
 
-
+                // Postings
                 var postings = from p in myEntity.Postings
                                where p.UserEmail == email
                                orderby p.EnteredOn descending
-                               select new { p.Id, p.Title };
+                               select new { p.Id, p.Title, p.Price, p.EnteredOn, p.Author };
 
                 Repeater1.DataSource = postings;
                 Repeater1.DataBind();
