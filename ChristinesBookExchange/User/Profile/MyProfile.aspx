@@ -34,13 +34,18 @@
                 <td><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/Profile/EditProfile.aspx">Edit my Profile</asp:HyperLink></td>
             </tr>
         </table>
-    </div>
+    </div>    
     <div style="float: right; padding: 50px">
         <h3>Current Postings</h3>       
         <asp:Repeater ID="Repeater1" runat="server" >
-            <ItemTemplate>                        
-                <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("Title") %>' NavigateUrl='<%# String.Concat("/ChristinesBookExchange/User/Post/AddEditBook.aspx?Id=", Eval("Id")) %>'></asp:HyperLink>                                
-                <br />
+            <ItemTemplate>
+                <table style="padding: 0px;">
+                    <td>
+                        <asp:HyperLink ID="HyperLink3" runat="server" Text='<%# Eval("Title") %>' 
+                            NavigateUrl='<%# String.Concat("~/User/Post/AddEditBook.aspx?Id=", Eval("Id")) %>'>
+                        </asp:HyperLink><br />
+                    </td>                
+                </table>
             </ItemTemplate>            
         </asp:Repeater>
         <br />
