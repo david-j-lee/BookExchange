@@ -101,7 +101,7 @@ public partial class Post_AddEditBook : System.Web.UI.Page
             }
 
             myEntity.SaveChanges();
-            Response.Redirect("Default.aspx");
+            Response.Redirect("~/User/Profile/MyProfile.aspx");
         }
     }
 }
