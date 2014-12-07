@@ -25,16 +25,14 @@
             <td> ISBN</td>
         <td>
             <asp:TextBox ID="ISBN" runat="server" Width="200" TextMode="MultiLine"></asp:TextBox>
-        
-
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPassword2" CssClass="ErrorMessage" Display="Dynamic" ForeColor="red" ErrorMessage="Confirm the password">*</asp:RequiredFieldValidator>
-</td>
+        </td>
 
                 </tr>
                 <tr>
             <td> Author</td>
         <td>
-            <asp:TextBox ID="Author" runat="server" Width="200"></asp:TextBox>*</td>
+            <asp:TextBox ID="Author" runat="server" Width="200"></asp:TextBox>
+            </td>
         </tr>
 
                <tr>
@@ -83,8 +81,8 @@
         <tr>
             <td></td>
         <td>
-            <asp:Button ID="btnSave" runat="server" Text="Confirm"
-                onclick="btnSave_Click" /></td>
+            <asp:Button ID="btnSave" runat="server" Text="Confirm" onclick="btnSave_Click" />
+        </td>
         </tr>
 
         <tr>
