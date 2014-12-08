@@ -46,100 +46,129 @@
         </table>
     </div>    
 
-    <div style="float: left; padding: 50px">
-        <h3 style="text-align: center">Current Postings</h3>       
+    <div style="float: right; ">
+
+        <div style="padding: 50px">
+            <h3 style="text-align: center">Trade Requests</h3>       
         
-        <table style="padding: 0px;">
-            <tr style="padding: 4px 7px 2px 4px; text-align: center">
-                <th>Title</th>
-                <th>Author</th>
-                <th>Price</th>
-                <th>Date</th>
-            </tr>
-            <asp:Repeater ID="Repeater1" runat="server" >
-                <ItemTemplate>                    
-                    <tr>                        
-                        <td style="padding: 4px 7px 2px 4px">
-                            <asp:HyperLink ID="HyperLink3" runat="server" Text='<%# Eval("Title") %>' 
-                                NavigateUrl='<%# String.Concat("~/User/Post/AddEditBook.aspx?Id=", Eval("Id")) %>'>
-                            </asp:HyperLink>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px">
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval ("EnteredOn", "{0:d}") %>'></asp:Label>
-                        </td>
-                    </tr>
-                </ItemTemplate>            
-            </asp:Repeater>
-        </table>            
-        <br />
-        <div style="text-align: center">
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/User/Post/AddEditBook.aspx">
-                Post a book
-            </asp:HyperLink>
+            <table style="padding: 0px;">
+                <tr style="padding: 4px 7px 2px 4px; text-align: center">
+                    <th>Book Offered</th>  
+                    <th>My Book</th>                              
+                    <th>Requested Date</th>
+                </tr>
+                <asp:Repeater ID="Repeater4" runat="server" >
+                    <ItemTemplate>                    
+                        <tr>                                                                        
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label4" runat="server" Text='<%# Eval ("urTitle") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval ("myTitle") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px">
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval ("RequestDate", "{0:d}") %>'></asp:Label>
+                            </td>
+                        </tr>
+                    </ItemTemplate>            
+                </asp:Repeater>
+            </table>            
+        </div>    
+
+        <div style="padding: 50px">
+            <h3 style="text-align: center">Current Postings</h3>       
+        
+            <table style="padding: 0px;">
+                <tr style="padding: 4px 7px 2px 4px; text-align: center">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+                <asp:Repeater ID="Repeater1" runat="server" >
+                    <ItemTemplate>                    
+                        <tr>                        
+                            <td style="padding: 4px 7px 2px 4px">
+                                <asp:HyperLink ID="HyperLink3" runat="server" Text='<%# Eval("Title") %>' 
+                                    NavigateUrl='<%# String.Concat("~/User/Post/AddEditBook.aspx?Id=", Eval("Id")) %>'>
+                                </asp:HyperLink>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px">
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval ("EnteredOn", "{0:d}") %>'></asp:Label>
+                            </td>
+                        </tr>
+                    </ItemTemplate>            
+                </asp:Repeater>
+            </table>            
+            <br />
+            <div style="text-align: center">
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/User/Post/AddEditBook.aspx">
+                    Post a book
+                </asp:HyperLink>
+            </div>
         </div>
-    </div>
 
-    <div style="float: left; padding: 50px">
-        <h3 style="text-align: center">Completed Postings</h3>       
+        <div style="padding: 50px">
+            <h3 style="text-align: center">My Requests</h3>       
         
-        <table style="padding: 0px;">
-            <tr style="padding: 4px 7px 2px 4px; text-align: center">
-                <th>Title</th>
-                <th>Author</th>
-                <th>Price</th>
-                <th>Date</th>
-            </tr>
-            <asp:Repeater ID="Repeater3" runat="server" >
-                <ItemTemplate>                    
-                    <tr>                                                
-                        <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px">
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval ("EnteredOn", "{0:d}") %>'></asp:Label>
-                        </td>
-                    </tr>
-                </ItemTemplate>            
-            </asp:Repeater>
-        </table>
-    </div>
+            <table style="padding: 0px;">
+                <tr style="padding: 4px 7px 2px 4px; text-align: center">
+                    <th>My Book</th>
+                    <th>Requested Book</th>                
+                    <th>Requested Date</th>
+                </tr>
+                <asp:Repeater ID="Repeater2" runat="server" >
+                    <ItemTemplate>                    
+                        <tr>                                                
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval ("myTitle") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label4" runat="server" Text='<%# Eval ("urTitle") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px">
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval ("RequestDate", "{0:d}") %>'></asp:Label>
+                            </td>
+                        </tr>
+                    </ItemTemplate>            
+                </asp:Repeater>
+            </table>            
+        </div>
 
-    <div style="float: left; padding: 50px">
-        <h3 style="text-align: center">My Requests</h3>       
+        <div style="padding: 50px">
+            <h3 style="text-align: center">Completed Postings</h3>       
         
-        <table style="padding: 0px;">
-            <tr style="padding: 4px 7px 2px 4px; text-align: center">
-                <th>My Book</th>
-                <th>Requested Book</th>                
-                <th>Requested Date</th>
-            </tr>
-            <asp:Repeater ID="Repeater2" runat="server" >
-                <ItemTemplate>                    
-                    <tr>                                                
-                        <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval ("myTitle") %>'></asp:Label>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                            <asp:Label ID="Label4" runat="server" Text='<%# Eval ("urTitle") %>'></asp:Label>
-                        </td>
-                        <td style="padding: 4px 7px 2px 4px">
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval ("RequestDate", "{0:d}") %>'></asp:Label>
-                        </td>
-                    </tr>
-                </ItemTemplate>            
-            </asp:Repeater>
-        </table>            
-    </div>    
-
- 
+            <table style="padding: 0px;">
+                <tr style="padding: 4px 7px 2px 4px; text-align: center">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+                <asp:Repeater ID="Repeater3" runat="server" >
+                    <ItemTemplate>                    
+                        <tr>                                                
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px">
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval ("EnteredOn", "{0:d}") %>'></asp:Label>
+                            </td>
+                        </tr>
+                    </ItemTemplate>            
+                </asp:Repeater>
+            </table>
+        </div>            
+        
+    </div>
     <div class="clearing"></div>
 </asp:Content>

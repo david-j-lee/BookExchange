@@ -62,8 +62,17 @@ public partial class User_Profile_MyProfile : System.Web.UI.Page
                 Repeater2.DataSource = myRequests;
                 Repeater2.DataBind();
 
-         
-                
+
+                // requests for my books
+                var pendingOffers = from tradersPost in myEntity.Postings
+                                    join trade in myEntity.TradeRequests on tradersPost.Id equals trade.TradePostingId
+                                    join myPost in myEntity.Postings on trade.PostingId equals myPost.Id
+                                    where myPost.UserEmail == email
+                                    orderby trade.RequestDate descending
+                                    select new { myTitle = myPost.Title, urTitle = tradersPost.Title, trade.RequestDate };
+
+                Repeater4.DataSource = pendingOffers;
+                Repeater4.DataBind();
             }
         }
     }
