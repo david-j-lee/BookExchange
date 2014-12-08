@@ -8,7 +8,7 @@ using BookExchangeModel;
 
 public partial class Post_BookDetails : System.Web.UI.Page
 {
-    int _id = -1;
+    int _id = -1;    
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -47,12 +47,12 @@ public partial class Post_BookDetails : System.Web.UI.Page
 
         // load login user access controls
 
-        if (Session["email"] == null)
+        if (Session["email"] == null) // check if logged in
         {
             btnRequestTrade.Visible = false;
             ddlBooks.Visible = false;
         }
-        else if (Session["email"].ToString() == posterEmail)
+        else if (Session["email"].ToString() == posterEmail) // check if post is from you
         {
             btnRequestTrade.Visible = false;
             ddlBooks.Visible = false;
@@ -65,6 +65,24 @@ public partial class Post_BookDetails : System.Web.UI.Page
     }
     protected void btnRequestTrade_Click(object sender, EventArgs e)
     {
+        using (BookExchangeEntities myEntity = new BookExchangeEntities())
+        {
+            TradeRequest myTradeRequest;
 
+            // if insert
+            if (ddlBooks.SelectedIndex >= 0)
+            {
+                myTradeRequest = new TradeRequest();
+
+                myTradeRequest.Status = 0;
+                myTradeRequest.RequestDate = DateTime.Now;
+                myTradeRequest.PostingId = _id;
+                myTradeRequest.TradePostingId = Convert.ToInt32(ddlBooks.SelectedValue);
+
+                myEntity.AddToTradeRequests(myTradeRequest);
+
+                myEntity.SaveChanges();
+            }
+        }
     }
 }

@@ -21,7 +21,7 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("BookExchangeModel", "FK_Postings_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(BookExchangeModel.User), "Postings", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(BookExchangeModel.Posting), true)]
 [assembly: EdmRelationshipAttribute("BookExchangeModel", "FK_TradeRequests_Postings", "Postings", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(BookExchangeModel.Posting), "TradeRequests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(BookExchangeModel.TradeRequest), true)]
-[assembly: EdmRelationshipAttribute("BookExchangeModel", "FK_TradeRequests_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(BookExchangeModel.User), "TradeRequests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(BookExchangeModel.TradeRequest), true)]
+[assembly: EdmRelationshipAttribute("BookExchangeModel", "FK_TradeRequests_Postings1", "Postings", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(BookExchangeModel.Posting), "TradeRequests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(BookExchangeModel.TradeRequest), true)]
 [assembly: EdmRelationshipAttribute("BookExchangeModel", "FK_UserReviews_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(BookExchangeModel.User), "UserReviews", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(BookExchangeModel.UserReview), true)]
 [assembly: EdmRelationshipAttribute("BookExchangeModel", "FK_UserReviews_Users1", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(BookExchangeModel.User), "UserReviews", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(BookExchangeModel.UserReview), true)]
 
@@ -1226,6 +1226,28 @@ namespace BookExchangeModel
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("BookExchangeModel", "FK_TradeRequests_Postings1", "TradeRequests")]
+        public EntityCollection<TradeRequest> TradeRequests1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TradeRequest>("BookExchangeModel.FK_TradeRequests_Postings1", "TradeRequests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TradeRequest>("BookExchangeModel.FK_TradeRequests_Postings1", "TradeRequests", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -1360,24 +1382,24 @@ namespace BookExchangeModel
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String UserEmail
+        public Nullable<global::System.Int32> TradePostingId
         {
             get
             {
-                return _UserEmail;
+                return _TradePostingId;
             }
             set
             {
-                OnUserEmailChanging(value);
-                ReportPropertyChanging("UserEmail");
-                _UserEmail = StructuralObject.SetValidValue(value, true, "UserEmail");
-                ReportPropertyChanged("UserEmail");
-                OnUserEmailChanged();
+                OnTradePostingIdChanging(value);
+                ReportPropertyChanging("TradePostingId");
+                _TradePostingId = StructuralObject.SetValidValue(value, "TradePostingId");
+                ReportPropertyChanged("TradePostingId");
+                OnTradePostingIdChanged();
             }
         }
-        private global::System.String _UserEmail;
-        partial void OnUserEmailChanging(global::System.String value);
-        partial void OnUserEmailChanged();
+        private Nullable<global::System.Int32> _TradePostingId;
+        partial void OnTradePostingIdChanging(Nullable<global::System.Int32> value);
+        partial void OnTradePostingIdChanged();
 
         #endregion
 
@@ -1427,16 +1449,16 @@ namespace BookExchangeModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BookExchangeModel", "FK_TradeRequests_Users", "Users")]
-        public User User
+        [EdmRelationshipNavigationPropertyAttribute("BookExchangeModel", "FK_TradeRequests_Postings1", "Postings")]
+        public Posting Posting1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("BookExchangeModel.FK_TradeRequests_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Posting>("BookExchangeModel.FK_TradeRequests_Postings1", "Postings").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("BookExchangeModel.FK_TradeRequests_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Posting>("BookExchangeModel.FK_TradeRequests_Postings1", "Postings").Value = value;
             }
         }
         /// <summary>
@@ -1444,17 +1466,17 @@ namespace BookExchangeModel
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<User> UserReference
+        public EntityReference<Posting> Posting1Reference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("BookExchangeModel.FK_TradeRequests_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Posting>("BookExchangeModel.FK_TradeRequests_Postings1", "Postings");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("BookExchangeModel.FK_TradeRequests_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Posting>("BookExchangeModel.FK_TradeRequests_Postings1", "Postings", value);
                 }
             }
         }
@@ -1777,28 +1799,6 @@ namespace BookExchangeModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Posting>("BookExchangeModel.FK_Postings_Users", "Postings", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BookExchangeModel", "FK_TradeRequests_Users", "TradeRequests")]
-        public EntityCollection<TradeRequest> TradeRequests
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TradeRequest>("BookExchangeModel.FK_TradeRequests_Users", "TradeRequests");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TradeRequest>("BookExchangeModel.FK_TradeRequests_Users", "TradeRequests", value);
                 }
             }
         }

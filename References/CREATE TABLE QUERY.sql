@@ -192,7 +192,7 @@ DROP TABLE Users
 		[Status] [int] NULL,
 		[RequestDate] [datetime] NULL,
 		[PostingId] [int] NULL,
-		[TradePostingId] [nvarchar](50) NULL,		
+		[TradePostingId] [int] NULL,		
 		CONSTRAINT [PK_TradeRequests] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -208,4 +208,11 @@ DROP TABLE Users
 	GO
 	
 	ALTER TABLE [dbo].[TradeRequests] CHECK CONSTRAINT [FK_TradeRequests_Postings]
+	GO
+
+	ALTER TABLE [dbo].[TradeRequests]  
+		WITH CHECK ADD CONSTRAINT [FK_TradeRequests_Postings1] FOREIGN KEY([TradePostingId]) REFERENCES [dbo].[Postings] ([Id])
+	GO
+	
+	ALTER TABLE [dbo].[TradeRequests] CHECK CONSTRAINT [FK_TradeRequests_Postings1]
 	GO

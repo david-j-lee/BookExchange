@@ -42,7 +42,7 @@
             <td><asp:DropDownList ID="ddlBooks" runat="server" DataSourceID="SqlDataSource1" DataTextField="Title" DataValueField="Id"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:BookExchangeConnectionString %>" 
-                    SelectCommand="SELECT * FROM [Postings] WHERE ([UserEmail] = @UserEmail) ORDER BY [Title]">
+                    SelectCommand="SELECT * FROM [Postings] WHERE ([UserEmail] = @UserEmail AND [TradersEmail] is null) ORDER BY [Title]">
                     <SelectParameters>
                         <asp:SessionParameter Name="UserEmail" SessionField="email" Type="String" />
                     </SelectParameters>

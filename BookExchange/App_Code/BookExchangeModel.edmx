@@ -20,8 +20,8 @@
             <End Role="Postings" EntitySet="Postings" />
             <End Role="TradeRequests" EntitySet="TradeRequests" />
           </AssociationSet>
-          <AssociationSet Name="FK_TradeRequests_Users" Association="BookExchangeModel.Store.FK_TradeRequests_Users">
-            <End Role="Users" EntitySet="Users" />
+          <AssociationSet Name="FK_TradeRequests_Postings1" Association="BookExchangeModel.Store.FK_TradeRequests_Postings1">
+            <End Role="Postings" EntitySet="Postings" />
             <End Role="TradeRequests" EntitySet="TradeRequests" />
           </AssociationSet>
           <AssociationSet Name="FK_UserReviews_Users" Association="BookExchangeModel.Store.FK_UserReviews_Users">
@@ -91,7 +91,7 @@
           <Property Name="Status" Type="int" />
           <Property Name="RequestDate" Type="datetime" />
           <Property Name="PostingId" Type="int" />
-          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="TradePostingId" Type="int" />
         </EntityType>
         <EntityType Name="UserReviews">
           <Key>
@@ -144,15 +144,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TradeRequests_Users">
-          <End Role="Users" Type="BookExchangeModel.Store.Users" Multiplicity="0..1" />
+        <Association Name="FK_TradeRequests_Postings1">
+          <End Role="Postings" Type="BookExchangeModel.Store.Postings" Multiplicity="0..1" />
           <End Role="TradeRequests" Type="BookExchangeModel.Store.TradeRequests" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Email" />
+            <Principal Role="Postings">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="TradeRequests">
-              <PropertyRef Name="UserEmail" />
+              <PropertyRef Name="TradePostingId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -200,8 +200,8 @@
             <End Role="Postings" EntitySet="Postings" />
             <End Role="TradeRequests" EntitySet="TradeRequests" />
           </AssociationSet>
-          <AssociationSet Name="FK_TradeRequests_Users" Association="BookExchangeModel.FK_TradeRequests_Users">
-            <End Role="Users" EntitySet="Users" />
+          <AssociationSet Name="FK_TradeRequests_Postings1" Association="BookExchangeModel.FK_TradeRequests_Postings1">
+            <End Role="Postings" EntitySet="Postings" />
             <End Role="TradeRequests" EntitySet="TradeRequests" />
           </AssociationSet>
           <AssociationSet Name="FK_UserReviews_Users" Association="BookExchangeModel.FK_UserReviews_Users">
@@ -264,6 +264,7 @@
           <Property Name="TradersEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="User" Relationship="BookExchangeModel.FK_Postings_Users" FromRole="Postings" ToRole="Users" />
           <NavigationProperty Name="TradeRequests" Relationship="BookExchangeModel.FK_TradeRequests_Postings" FromRole="Postings" ToRole="TradeRequests" />
+          <NavigationProperty Name="TradeRequests1" Relationship="BookExchangeModel.FK_TradeRequests_Postings1" FromRole="Postings" ToRole="TradeRequests" />
         </EntityType>
         <EntityType Name="TradeRequest">
           <Key>
@@ -273,9 +274,9 @@
           <Property Name="Status" Type="Int32" />
           <Property Name="RequestDate" Type="DateTime" Precision="3" />
           <Property Name="PostingId" Type="Int32" />
-          <Property Name="UserEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TradePostingId" Type="Int32" />
           <NavigationProperty Name="Posting" Relationship="BookExchangeModel.FK_TradeRequests_Postings" FromRole="TradeRequests" ToRole="Postings" />
-          <NavigationProperty Name="User" Relationship="BookExchangeModel.FK_TradeRequests_Users" FromRole="TradeRequests" ToRole="Users" />
+          <NavigationProperty Name="Posting1" Relationship="BookExchangeModel.FK_TradeRequests_Postings1" FromRole="TradeRequests" ToRole="Postings" />
         </EntityType>
         <EntityType Name="UserReview">
           <Key>
@@ -306,7 +307,6 @@
           <Property Name="CreatedOn" Type="DateTime" Precision="3" />
           <Property Name="Type" Type="Int32" />
           <NavigationProperty Name="Postings" Relationship="BookExchangeModel.FK_Postings_Users" FromRole="Users" ToRole="Postings" />
-          <NavigationProperty Name="TradeRequests" Relationship="BookExchangeModel.FK_TradeRequests_Users" FromRole="Users" ToRole="TradeRequests" />
           <NavigationProperty Name="UserReviews" Relationship="BookExchangeModel.FK_UserReviews_Users" FromRole="Users" ToRole="UserReviews" />
           <NavigationProperty Name="UserReviews1" Relationship="BookExchangeModel.FK_UserReviews_Users1" FromRole="Users" ToRole="UserReviews" />
         </EntityType>
@@ -334,15 +334,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TradeRequests_Users">
-          <End Role="Users" Type="BookExchangeModel.User" Multiplicity="0..1" />
+        <Association Name="FK_TradeRequests_Postings1">
+          <End Role="Postings" Type="BookExchangeModel.Posting" Multiplicity="0..1" />
           <End Role="TradeRequests" Type="BookExchangeModel.TradeRequest" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Email" />
+            <Principal Role="Postings">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="TradeRequests">
-              <PropertyRef Name="UserEmail" />
+              <PropertyRef Name="TradePostingId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -436,7 +436,7 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
                 <ScalarProperty Name="PostingId" ColumnName="PostingId" />
-                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="TradePostingId" ColumnName="TradePostingId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

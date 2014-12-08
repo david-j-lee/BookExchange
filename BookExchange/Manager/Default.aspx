@@ -14,8 +14,11 @@
             <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Manager/ManageUsers.aspx">Manage Users</asp:HyperLink>
         </li>
         <li>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Manager/AllPostings.aspx">AllPostings</asp:HyperLink>
-        </li>                        
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Manager/AllPostings.aspx">All Postings</asp:HyperLink>
+        </li>        
+        <li>
+            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Manager/ManageTradeRequests.aspx">Trade Requests</asp:HyperLink>
+        </li>                 
     </ul>
 </asp:Content>
 
