@@ -1,4 +1,4 @@
-USE [F:\DOCUMENTS\GITHUB\BOOKEXCHANGE\CHRISTINESBOOKEXCHANGE\APP_DATA\BOOKEXCHANGE.MDF]
+USE [F:\DOCUMENTS\GITHUB\BOOKEXCHANGE\BOOKEXCHANGE\APP_DATA\BOOKEXCHANGE.MDF]
 GO
 
 DROP TABLE Home
@@ -28,6 +28,13 @@ DROP TABLE Users
 		[EnteredBy] [int] NULL,
 		[UpdatedOn] [datetime] NULL,
 		[UpdatedBy] [int] NULL
+		CONSTRAINT [PK_Home] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
+			PAD_INDEX = OFF, 
+			STATISTICS_NORECOMPUTE = OFF, 
+			IGNORE_DUP_KEY = OFF, 
+			ALLOW_ROW_LOCKS = ON, 
+			ALLOW_PAGE_LOCKS = ON
+			) ON [PRIMARY]
 		) ON [PRIMARY]
 	GO
 
@@ -51,6 +58,13 @@ DROP TABLE Users
 		[EnteredBy] [int] NULL,
 		[UpdatedOn] [datetime] NULL,
 		[UpdatedBy] [int] NULL
+		CONSTRAINT [PK_About] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
+			PAD_INDEX = OFF, 
+			STATISTICS_NORECOMPUTE = OFF, 
+			IGNORE_DUP_KEY = OFF, 
+			ALLOW_ROW_LOCKS = ON, 
+			ALLOW_PAGE_LOCKS = ON
+			) ON [PRIMARY]
 		) ON [PRIMARY]
 	GO
 
@@ -73,6 +87,7 @@ DROP TABLE Users
 		[ImageURL] [nvarchar](200) NULL,
 		[Description] [nvarchar](50) NULL,
 		[CreatedOn] [datetime] NULL,
+		[Type] [int] NULL,
 		CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Email] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -82,6 +97,9 @@ DROP TABLE Users
 			) ON [PRIMARY]
 		) ON [PRIMARY]
 	GO
+
+	INSERT INTO Users (Email,Password,Type,FirstName,LastName,CreatedOn)
+	VALUES ('manager','admin',1,'manager', 'level1', GETDATE());
 
 /****** Object:  Table [dbo].[UserReviews]    Script Date: 11/13/2014 7:58:31 PM ******/
 
@@ -143,6 +161,7 @@ DROP TABLE Users
 		[EnteredOn] [datetime] NULL,
 		[UpdatedOn] [datetime] NULL,
 		[UserEmail] [nvarchar](50) NULL,
+		[TradersEmail] [nvarchar](50) NULL,
 		CONSTRAINT [PK_Postings] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -173,7 +192,7 @@ DROP TABLE Users
 		[Status] [int] NULL,
 		[RequestDate] [datetime] NULL,
 		[PostingId] [int] NULL,
-		[UserEmail] [nvarchar](50) NULL,		
+		[TradePostingId] [nvarchar](50) NULL,		
 		CONSTRAINT [PK_TradeRequests] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (
 			PAD_INDEX = OFF, 
 			STATISTICS_NORECOMPUTE = OFF, 
@@ -189,11 +208,4 @@ DROP TABLE Users
 	GO
 	
 	ALTER TABLE [dbo].[TradeRequests] CHECK CONSTRAINT [FK_TradeRequests_Postings]
-	GO
-	
-	ALTER TABLE [dbo].[TradeRequests]  
-		WITH CHECK ADD CONSTRAINT [FK_TradeRequests_Users] FOREIGN KEY([UserEmail])	REFERENCES [dbo].[Users] ([Email])
-	GO
-	
-	ALTER TABLE [dbo].[TradeRequests] CHECK CONSTRAINT [FK_TradeRequests_Users]
 	GO
