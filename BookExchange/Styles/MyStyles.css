@@ -45,6 +45,12 @@ td {
 .clearing {
     clear: both;
 }
+#sidebar {
+    width: 200px;
+    float: right;
+    background: #9eabd5;
+    margin-top: 0px;
+}
 
 .wrapper {    
     min-width: 1000px;    
