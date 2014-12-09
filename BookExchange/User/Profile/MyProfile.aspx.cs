@@ -69,7 +69,7 @@ public partial class User_Profile_MyProfile : System.Web.UI.Page
                                     join myPost in myEntity.Postings on trade.PostingId equals myPost.Id
                                     where myPost.UserEmail == email
                                     orderby trade.RequestDate descending
-                                    select new { myTitle = myPost.Title, urTitle = tradersPost.Title, trade.RequestDate };
+                                    select new { myTitle = myPost.Title, urTitle = tradersPost.Title, trade.RequestDate, trade.Id };
 
                 Repeater4.DataSource = pendingOffers;
                 Repeater4.DataBind();

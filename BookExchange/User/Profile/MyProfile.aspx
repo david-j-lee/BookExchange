@@ -53,13 +53,15 @@
         
             <table style="padding: 0px;">
                 <tr style="padding: 4px 7px 2px 4px; text-align: center">
+                    <th></th>
                     <th>Book Offered</th>  
                     <th>My Book</th>                              
                     <th>Requested Date</th>
                 </tr>
                 <asp:Repeater ID="Repeater4" runat="server" >
                     <ItemTemplate>                    
-                        <tr>                                                                        
+                        <tr>
+                            <td><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl='<%# String.Concat("~/User/Post/ExchangeRequest.aspx?Id=", Eval("Id")) %>'>accept</asp:HyperLink></td>
                             <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label4" runat="server" Text='<%# Eval ("urTitle") %>'></asp:Label>
                             </td>
@@ -68,7 +70,7 @@
                             </td>
                             <td style="padding: 4px 7px 2px 4px">
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval ("RequestDate", "{0:d}") %>'></asp:Label>
-                            </td>
+                            </td>                            
                         </tr>
                     </ItemTemplate>            
                 </asp:Repeater>
