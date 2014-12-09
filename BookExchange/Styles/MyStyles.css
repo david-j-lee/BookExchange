@@ -1,11 +1,11 @@
 ﻿/* Defaults */
 
 html {
-    background-color: #c6c5c5;    
+    background-color: #000;    
 }
 
 header {
-    background-color: #c3c3c3;
+    background-color: #9eabd5;
     color: #fff;    
     padding: 5px 10px 1px 25px;
     white-space: nowrap;
@@ -25,7 +25,7 @@ body {
 }
 
 footer {
-    background-color: #c3c3c3;
+    background-color: #9eabd5;
     color: #fff;    
     padding: 1px 20px 1px 20px;
     text-align: right;
@@ -90,7 +90,7 @@ td {
 .body {
     max-width: 1200px;    
     padding: 1px 40px 1px 40px;
-    background-color: #d9d9d9;    
+    background-color: #ebf2fa;    
     margin: auto;
 }
 
