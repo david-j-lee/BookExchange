@@ -36,7 +36,15 @@
                         <tr>
                             <td>Description</td>
                             <td><asp:Label ID="lblMyDescription" runat="server" Width="200"></asp:Label></td>
-                        </tr>                   
+                        </tr> 
+                        
+                        
+                        <tr>
+                            <td>tradersemail</td>
+                            <td><asp:Label ID="lblMyTradersEmail" runat="server" Width="200"></asp:Label></td>
+                        </tr> 
+                        
+                                          
                     </table>
                 </td>
 
@@ -69,6 +77,10 @@
                         <tr>
                             <td>Description</td>
                             <td><asp:Label ID="lblTradersDescription" runat="server" Width="200"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td>Traders Email</td>
+                            <td><asp:Label ID="lblTradersTradersEmail" runat="server" Width="200"></asp:Label></td>
                         </tr>
                     </table>
                </td>

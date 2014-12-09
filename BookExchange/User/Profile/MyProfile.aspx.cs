@@ -67,7 +67,7 @@ public partial class User_Profile_MyProfile : System.Web.UI.Page
                 var pendingOffers = from tradersPost in myEntity.Postings
                                     join trade in myEntity.TradeRequests on tradersPost.Id equals trade.TradePostingId
                                     join myPost in myEntity.Postings on trade.PostingId equals myPost.Id
-                                    where myPost.UserEmail == email
+                                    where myPost.UserEmail == email && myPost.TradersEmail == null
                                     orderby trade.RequestDate descending
                                     select new { myTitle = myPost.Title, urTitle = tradersPost.Title, trade.RequestDate, trade.Id };
 

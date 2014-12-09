@@ -157,7 +157,7 @@
                     <ItemTemplate>                    
                         <tr>                                                
                             <td style="padding: 4px 7px 2px 4px; text-align: right;">
-                                <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Title") %>'></asp:Label>
                             </td>
                             <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>

@@ -40,7 +40,7 @@ public partial class Post_BookDetails : System.Web.UI.Page
                     lblExpectedValue.Text = posting.Price.ToString();
                     lblCondition.Text = posting.Condition;
                     Image1.ImageUrl = posting.ImageURL;
-                }
+                }                
             }
         }
 
@@ -59,7 +59,20 @@ public partial class Post_BookDetails : System.Web.UI.Page
         }
         else
         {
-            // place trade request code here
+            using (BookExchangeEntities myEntity = new BookExchangeEntities())
+            {
+                var myBooks = from p in myEntity.Postings
+                              join t in myEntity.TradeRequests on p.Id equals t.PostingId into books
+                              where p.UserEmail == Session["email"].ToString()
+                              
+                              from b in books.DefaultIfEmpty()
+                              
+                              select new { p.Title, p.Id };
+
+                ddlBooks.DataTextField = "Title";
+                ddlBooks.DataValueField = "Id";
+                ddlBooks.DataBind();
+            }
         }
 
     }
