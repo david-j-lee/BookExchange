@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MyProfile.aspx.cs" Inherits="User_Profile_MyProfile" %>
+﻿<%@ Page Title="Profile - My Profile" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MyProfile.aspx.cs" Inherits="User_Profile_MyProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -7,7 +7,7 @@
         <table>
             <tr>            
                 <td>
-                    <asp:Image ID="Image1" runat="server" Height="300px" Width="250px" />
+                    <asp:Image ID="Image1" runat="server" Height="300px" Width="250px" BorderStyle="Double" BorderWidth="15px" />
                 </td>
             </tr>        
             <tr>

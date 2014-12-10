@@ -38,12 +38,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="MessageOne" Type="nvarchar" MaxLength="50" />
-          <Property Name="MessageTwo" Type="nvarchar" MaxLength="50" />
-          <Property Name="MessageThree" Type="nvarchar" MaxLength="50" />
-          <Property Name="ImageURLOne" Type="nvarchar" MaxLength="200" />
-          <Property Name="ImageURLTwo" Type="nvarchar" MaxLength="200" />
-          <Property Name="ImageURLThree" Type="nvarchar" MaxLength="200" />
+          <Property Name="MessageOne" Type="nvarchar" MaxLength="500" />
+          <Property Name="MessageTwo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MessageThree" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURLOne" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURLTwo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURLThree" Type="nvarchar" MaxLength="500" />
           <Property Name="EnteredOn" Type="datetime" />
           <Property Name="EnteredBy" Type="int" />
           <Property Name="UpdatedOn" Type="datetime" />
@@ -57,9 +57,9 @@
           <Property Name="MessageOne" Type="nvarchar" MaxLength="500" />
           <Property Name="MessageTwo" Type="nvarchar" MaxLength="500" />
           <Property Name="MessageThree" Type="nvarchar" MaxLength="500" />
-          <Property Name="ImageURLOne" Type="nvarchar" MaxLength="200" />
-          <Property Name="ImageURLTwo" Type="nvarchar" MaxLength="200" />
-          <Property Name="ImageURLThree" Type="nvarchar" MaxLength="200" />
+          <Property Name="ImageURLOne" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURLTwo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageURLThree" Type="nvarchar" MaxLength="500" />
           <Property Name="EnteredOn" Type="datetime" />
           <Property Name="EnteredBy" Type="int" />
           <Property Name="UpdatedOn" Type="datetime" />
@@ -218,12 +218,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="MessageOne" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="MessageTwo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="MessageThree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURLOne" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURLTwo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURLThree" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="MessageOne" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="MessageTwo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="MessageThree" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLOne" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLTwo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLThree" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="EnteredOn" Type="DateTime" Precision="3" />
           <Property Name="EnteredBy" Type="Int32" />
           <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
@@ -237,9 +237,9 @@
           <Property Name="MessageOne" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="MessageTwo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="MessageThree" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURLOne" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURLTwo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="ImageURLThree" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLOne" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLTwo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURLThree" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="EnteredOn" Type="DateTime" Precision="3" />
           <Property Name="EnteredBy" Type="Int32" />
           <Property Name="UpdatedOn" Type="DateTime" Precision="3" />

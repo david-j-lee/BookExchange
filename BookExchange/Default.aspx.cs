@@ -13,18 +13,23 @@ public partial class _Default : System.Web.UI.Page
         using (BookExchangeEntities myEntity = new BookExchangeEntities())
         {
             var homepage = (from h in myEntity.Homes
-                            orderby h.Id descending
+                            orderby h.EnteredOn descending
                             select h).FirstOrDefault();
 
             if (homepage != null)
             {
                 Label1.Text = homepage.MessageOne;
                 Label2.Text = homepage.MessageTwo;
+                Label3.Text = homepage.MessageThree;
+                Image1.ImageUrl = homepage.ImageURLOne;
+                Image2.ImageUrl = homepage.ImageURLTwo;
+                Image3.ImageUrl = homepage.ImageURLThree;
             }
         }
     }
     protected void btnSearch_Click(object sender, EventArgs e)
     {
+        Session["search"] = txtSearch.Text;
         Response.Redirect("~/Search.aspx");
     }
 }

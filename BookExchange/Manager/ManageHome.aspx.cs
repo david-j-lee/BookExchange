@@ -8,47 +8,114 @@ using BookExchangeModel;
 
 public partial class Managing_Home : System.Web.UI.Page
 {
+    int _id = -1;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["type"] == null)
+        if (Session["type"] == null || Session["type"] == "0")
         {
             Response.Redirect("~/Login.aspx");
         }
         else
-        {
-            if (Convert.ToInt32(Session["type"]) == 0)
+        {            
+            using (BookExchangeEntities myEntity = new BookExchangeEntities())
             {
-                Response.Redirect("~/Default.aspx");
-            }
-            else
-            {
-                if (Session["type"] == "0") // if user is logged in store the email
-                {
-                    Response.Redirect("~/Login.aspx");
-                }
+                // load all home
+                var allHome = from h in myEntity.Homes
+                              select new { h.MessageOne, h.MessageTwo, h.MessageThree, h.ImageURLOne, h.ImageURLTwo, h.ImageURLThree, h.EnteredOn };
 
-                if (!IsPostBack && email != "")
+                Repeater1.DataSource = allHome;
+                Repeater1.DataBind();
+
+                // if update
+                if (!IsPostBack)
                 {
-                    using (BookExchangeEntities myEntity = new BookExchangeEntities())
+                    var home = (from h in myEntity.Homes
+                                orderby h.EnteredOn descending
+                                select h).FirstOrDefault();
+                   
+                    if (home != null)
                     {
-                        var user = (from u in myEntity.Users
-                                    where u.Email == email
-                                    select u).SingleOrDefault();
-
-                        if (user != null)
-                        {
-                            txtFirstName.Text = user.FirstName;
-                            txtLastName.Text = user.LastName;
-                            txtCurrentCollege.Text = user.CurrentCollege;
-                            txtCity.Text = user.City;
-                            txtPhone.Text = user.Phone;
-                            txtDescription.Text = user.Description;
-
-                            Image1.ImageUrl = user.ImageURL;
-                        }
+                        txtMessageOne.Text = home.MessageOne;
+                        txtMessageTwo.Text = home.MessageTwo;
+                        txtMessageThree.Text = home.MessageThree;
+                        btnUpdate.Text = "Update";
+                        _id = home.Id;
                     }
                 }
             }
+        }
+    }
+
+    protected void btnUpdate_Click(object sender, EventArgs e)
+    {
+        using (BookExchangeEntities myEntity = new BookExchangeEntities())
+        {
+            var home = (from h in myEntity.Homes
+                        orderby h.EnteredOn descending
+                        select h).FirstOrDefault();
+
+            Home myHome;
+
+            // if insert
+            if (_id == -1)
+            {
+                myHome = new Home();
+                myHome.EnteredOn = DateTime.Now;
+
+                myEntity.AddToHomes(myHome);
+            }
+            else
+            {
+                myHome = (from p in myEntity.Homes
+                          where p.Id == _id
+                          select p).SingleOrDefault();
+            }
+
+            myHome.MessageOne = txtMessageOne.Text;
+            myHome.MessageTwo = txtMessageTwo.Text;
+            myHome.MessageThree = txtMessageThree.Text;
+            // default is previous image
+            if (home != null)
+            {
+                myHome.ImageURLOne = home.ImageURLOne;
+                myHome.ImageURLTwo = home.ImageURLTwo;
+                myHome.ImageURLThree = home.ImageURLThree;
+            }
+            // Image one
+            if (FileUpload1.HasFile)
+            {
+                string virtualFolder = "~/Images/Home/";
+                string physicalFolder = Server.MapPath(virtualFolder);
+                string fileName = Guid.NewGuid().ToString();
+                string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
+                FileUpload1.SaveAs(System.IO.Path.Combine(physicalFolder, fileName + extension));
+                myHome.ImageURLOne = virtualFolder + fileName + extension;
+            }
+
+            // Image two
+            if (FileUpload2.HasFile)
+            {
+                string virtualFolder = "~/Images/Home/";
+                string physicalFolder = Server.MapPath(virtualFolder);
+                string fileName = Guid.NewGuid().ToString();
+                string extension = System.IO.Path.GetExtension(FileUpload2.FileName);
+                FileUpload2.SaveAs(System.IO.Path.Combine(physicalFolder, fileName + extension));
+                myHome.ImageURLTwo = virtualFolder + fileName + extension;
+            }
+
+            // Image three
+            if (FileUpload3.HasFile)
+            {
+                string virtualFolder = "~/Images/Home/";
+                string physicalFolder = Server.MapPath(virtualFolder);
+                string fileName = Guid.NewGuid().ToString();
+                string extension = System.IO.Path.GetExtension(FileUpload3.FileName);
+                FileUpload3.SaveAs(System.IO.Path.Combine(physicalFolder, fileName + extension));
+                myHome.ImageURLThree = virtualFolder + fileName + extension;
+            }            
+            myEntity.SaveChanges();
+            // Response.Redirect("~/Manager/Default.aspx");
         }
     }
 }

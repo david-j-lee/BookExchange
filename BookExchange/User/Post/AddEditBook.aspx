@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddEditBook.aspx.cs" Inherits="Post_AddEditBook" %>
+﻿<%@ Page Title="Posting - Add/Edit a Book" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddEditBook.aspx.cs" Inherits="Post_AddEditBook" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -47,10 +47,15 @@
             <td></td>
             <td><asp:FileUpload ID="FileUpload1" runat="server" /></td>
         </tr>
+    </table>
+    <table>
         <tr>
-            <td></td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="error" ControlToValidate="txtTitle" ErrorMessage="Must type in a title"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
             <td style="text-align: center;"><asp:Button ID="btnPost" runat="server" Text="Post" OnClick="btnPost_Click" /></td>            
-            <td></td>
         </tr>
     </table>
 </asp:Content>

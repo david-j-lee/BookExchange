@@ -1,68 +1,63 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ManageAbout.aspx.cs" Inherits="Managing_ManageAbout" %>
+﻿<%@ Page Title="Manager - Manage About" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ManageAbout.aspx.cs" Inherits="Managing_ManageAbout" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
-        <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="MessageOne" HeaderText="MessageOne" SortExpression="MessageOne" />
-            <asp:BoundField DataField="MessageTwo" HeaderText="MessageTwo" SortExpression="MessageTwo" />
-            <asp:BoundField DataField="MessageThree" HeaderText="MessageThree" SortExpression="MessageThree" />
-            <asp:BoundField DataField="ImageURLOne" HeaderText="ImageURLOne" SortExpression="ImageURLOne" />
-            <asp:BoundField DataField="ImageURLTwo" HeaderText="ImageURLTwo" SortExpression="ImageURLTwo" />
-            <asp:BoundField DataField="ImageURLThree" HeaderText="ImageURLThree" SortExpression="ImageURLThree" />
-            <asp:BoundField DataField="EnteredOn" HeaderText="EnteredOn" SortExpression="EnteredOn" />
-            <asp:BoundField DataField="EnteredBy" HeaderText="EnteredBy" SortExpression="EnteredBy" />
-            <asp:BoundField DataField="UpdatedOn" HeaderText="UpdatedOn" SortExpression="UpdatedOn" />
-            <asp:BoundField DataField="UpdatedBy" HeaderText="UpdatedBy" SortExpression="UpdatedBy" />
-        </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookExchangeConnectionString %>" DeleteCommand="DELETE FROM [About] WHERE [Id] = @Id" InsertCommand="INSERT INTO [About] ([MessageOne], [MessageTwo], [MessageThree], [ImageURLOne], [ImageURLTwo], [ImageURLThree], [EnteredOn], [EnteredBy], [UpdatedOn], [UpdatedBy]) VALUES (@MessageOne, @MessageTwo, @MessageThree, @ImageURLOne, @ImageURLTwo, @ImageURLThree, @EnteredOn, @EnteredBy, @UpdatedOn, @UpdatedBy)" SelectCommand="SELECT * FROM [About]" UpdateCommand="UPDATE [About] SET [MessageOne] = @MessageOne, [MessageTwo] = @MessageTwo, [MessageThree] = @MessageThree, [ImageURLOne] = @ImageURLOne, [ImageURLTwo] = @ImageURLTwo, [ImageURLThree] = @ImageURLThree, [EnteredOn] = @EnteredOn, [EnteredBy] = @EnteredBy, [UpdatedOn] = @UpdatedOn, [UpdatedBy] = @UpdatedBy WHERE [Id] = @Id">
-        <DeleteParameters>
-            <asp:Parameter Name="Id" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="MessageOne" Type="String" />
-            <asp:Parameter Name="MessageTwo" Type="String" />
-            <asp:Parameter Name="MessageThree" Type="String" />
-            <asp:Parameter Name="ImageURLOne" Type="String" />
-            <asp:Parameter Name="ImageURLTwo" Type="String" />
-            <asp:Parameter Name="ImageURLThree" Type="String" />
-            <asp:Parameter Name="EnteredOn" Type="DateTime" />
-            <asp:Parameter Name="EnteredBy" Type="Int32" />
-            <asp:Parameter Name="UpdatedOn" Type="DateTime" />
-            <asp:Parameter Name="UpdatedBy" Type="Int32" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="MessageOne" Type="String" />
-            <asp:Parameter Name="MessageTwo" Type="String" />
-            <asp:Parameter Name="MessageThree" Type="String" />
-            <asp:Parameter Name="ImageURLOne" Type="String" />
-            <asp:Parameter Name="ImageURLTwo" Type="String" />
-            <asp:Parameter Name="ImageURLThree" Type="String" />
-            <asp:Parameter Name="EnteredOn" Type="DateTime" />
-            <asp:Parameter Name="EnteredBy" Type="Int32" />
-            <asp:Parameter Name="UpdatedOn" Type="DateTime" />
-            <asp:Parameter Name="UpdatedBy" Type="Int32" />
-            <asp:Parameter Name="Id" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
-    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="50px" Width="125px">
-        <Fields>
-            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="MessageOne" HeaderText="MessageOne" SortExpression="MessageOne" />
-            <asp:BoundField DataField="MessageTwo" HeaderText="MessageTwo" SortExpression="MessageTwo" />
-            <asp:BoundField DataField="MessageThree" HeaderText="MessageThree" SortExpression="MessageThree" />
-            <asp:BoundField DataField="ImageURLOne" HeaderText="ImageURLOne" SortExpression="ImageURLOne" />
-            <asp:BoundField DataField="ImageURLTwo" HeaderText="ImageURLTwo" SortExpression="ImageURLTwo" />
-            <asp:BoundField DataField="ImageURLThree" HeaderText="ImageURLThree" SortExpression="ImageURLThree" />
-            <asp:BoundField DataField="EnteredOn" HeaderText="EnteredOn" SortExpression="EnteredOn" />
-            <asp:BoundField DataField="EnteredBy" HeaderText="EnteredBy" SortExpression="EnteredBy" />
-            <asp:BoundField DataField="UpdatedOn" HeaderText="UpdatedOn" SortExpression="UpdatedOn" />
-            <asp:BoundField DataField="UpdatedBy" HeaderText="UpdatedBy" SortExpression="UpdatedBy" />
-            <asp:CommandField ShowInsertButton="True" />
-        </Fields>
-    </asp:DetailsView>
+    <h1>Manage About</h1>
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr><th>Message One</th></tr>
+                    <tr>            
+                        <td><asp:TextBox ID="txtMessageOne" runat="server" TextMode="MultiLine" Height="100px" Width="300px"></asp:TextBox></td>
+                    </tr>
+                    <tr><th>Message two</th></tr>        
+                    <tr>
+                        <td><asp:TextBox ID="txtMessageTwo" runat="server" TextMode="MultiLine" Height="100px" Width="300px"></asp:TextBox></td>
+                    </tr>
+                    <tr><th>Message Three</th></tr>
+                    <tr>  
+                        <td><asp:TextBox ID="txtMessageThree" runat="server" TextMode="MultiLine" Height="100px" Width="300px"></asp:TextBox></td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr><th>Image One</th></tr>
+                    <tr>
+                        <td><asp:FileUpload ID="FileUpload1" runat="server" /></td>                        
+                    </tr>
+                    <tr><th>Image three</th></tr>
+                    <tr>                        
+                        <td><asp:FileUpload ID="FileUpload2" runat="server" /></td>
+                    </tr>
+                    <tr><th>ImageOne</th></tr>
+                    <tr>                        
+                        <td><asp:FileUpload ID="FileUpload3" runat="server" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+            </td>
+        </tr>
+    </table>
+    <table>
+        <asp:Repeater ID="Repeater1" runat="server">
+            <ItemTemplate>
+                <tr>
+                    <td><asp:Label ID="lblMessageOne" runat="server" Text='<%# Eval("MessageOne") %>'></asp:Label></td>
+                    <td><asp:Label ID="lblMessageTwo" runat="server" Text='<%# Eval("MessageTwo") %>'></asp:Label></td>
+                    <td><asp:Label ID="lblMessageThree" runat="server" Text='<%# Eval("MessageThree") %>'></asp:Label></td>
+                    <td><asp:Label ID="lblUpdatedOn" runat="server" Text='<%# Eval("EnteredOn") %>'></asp:Label></td>
+                </tr>
+            </ItemTemplate>
+        </asp:Repeater>
+    </table>
 </asp:Content>
 

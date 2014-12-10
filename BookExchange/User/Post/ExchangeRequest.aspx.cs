@@ -49,7 +49,6 @@ public partial class Post_ExchangeRequest : System.Web.UI.Page
                         lblMyCondition.Text = myBookInfo.Condition;
                         lblMyPrice.Text = myBookInfo.Price.ToString();
                         lblMyDescription.Text = myBookInfo.Description;
-                        lblMyTradersEmail.Text = myBookInfo.TradersEmail;
 
                         // to get trade info
                         var offeredBookInfo = (from o in myEntity.Postings
@@ -62,7 +61,6 @@ public partial class Post_ExchangeRequest : System.Web.UI.Page
                         lblTradersCondition.Text = offeredBookInfo.Condition;
                         lblTradersPrice.Text = offeredBookInfo.Price.ToString();
                         lblTradersDescription.Text = offeredBookInfo.Description;
-                        lblTradersTradersEmail.Text = offeredBookInfo.TradersEmail;
                     }
                 }                 
             }

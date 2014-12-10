@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="BookDetails.aspx.cs" Inherits="Post_BookDetails" %>
+﻿<%@ Page Title="Posting - Book Details" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="BookDetails.aspx.cs" Inherits="Post_BookDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <table>
         <tr>        
-            <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px"/></td>   
+            <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px" BorderStyle="Solid"/></td>   
         </tr>
         <tr>
 
@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td>Description: &nbsp
-            <asp:Label ID="lblDescription" runat="server" TextMode="MultiLine" Width="200px" Height="50px"></asp:Label></td>
+            <asp:Label ID="lblDescription" runat="server" TextMode="MultiLine"></asp:Label></td>
         </tr>
         <tr>
             <td>Major: &nbsp

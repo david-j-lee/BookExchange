@@ -48,10 +48,10 @@ public partial class Post_AddEditBook : System.Web.UI.Page
                         Image1.ImageUrl = posting.ImageURL;
                     }
                 }
+            } else {
+                btnPost.Text = "Post";
             }
-        }
-        else
-        {
+        } else {
             Response.Redirect("~/Login.aspx");
         }
     }

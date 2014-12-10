@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ExchangeRequest.aspx.cs" Inherits="Post_ExchangeRequest" %>
+﻿<%@ Page Title="Posting - Exchange Requests" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ExchangeRequest.aspx.cs" Inherits="Post_ExchangeRequest" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -36,15 +36,7 @@
                         <tr>
                             <td>Description</td>
                             <td><asp:Label ID="lblMyDescription" runat="server" Width="200"></asp:Label></td>
-                        </tr> 
-                        
-                        
-                        <tr>
-                            <td>tradersemail</td>
-                            <td><asp:Label ID="lblMyTradersEmail" runat="server" Width="200"></asp:Label></td>
-                        </tr> 
-                        
-                                          
+                        </tr>                 
                     </table>
                 </td>
 
@@ -77,10 +69,6 @@
                         <tr>
                             <td>Description</td>
                             <td><asp:Label ID="lblTradersDescription" runat="server" Width="200"></asp:Label></td>
-                        </tr>
-                        <tr>
-                            <td>Traders Email</td>
-                            <td><asp:Label ID="lblTradersTradersEmail" runat="server" Width="200"></asp:Label></td>
                         </tr>
                     </table>
                </td>

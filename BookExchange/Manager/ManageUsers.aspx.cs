@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BookExchangeModel;
 
 public partial class Managing_Users : System.Web.UI.Page
 {
@@ -21,8 +22,39 @@ public partial class Managing_Users : System.Web.UI.Page
             }
             else
             {
-                //input on load code here
+                using (BookExchangeEntities myEntity = new BookExchangeEntities())
+                {
+                    var users = from u in myEntity.Users
+                                orderby u.CreatedOn
+                                select new { u.Email, u.FirstName, u.LastName, u.CreatedOn };
+                    Repeater1.DataSource = users;
+                    Repeater1.DataBind();
+                }
             }
+        }
+    }
+    protected void btnGo_Click(object sender, EventArgs e)
+    {
+        string email = txtEmailSearch.Text;
+        using (BookExchangeEntities myEntity = new BookExchangeEntities())
+        {
+            if (txtEmailSearch.Text != "")
+            {
+                var users = from u in myEntity.Users
+                            orderby u.CreatedOn
+                            where u.Email == email
+                            select new { u.Email, u.FirstName, u.LastName, u.CreatedOn };
+                Repeater1.DataSource = users;
+                Repeater1.DataBind();                
+            }
+            else
+            {
+                var users = from u in myEntity.Users
+                            orderby u.CreatedOn
+                            select new { u.Email, u.FirstName, u.LastName, u.CreatedOn };
+                Repeater1.DataSource = users;
+                Repeater1.DataBind();
+            }            
         }
     }
 }
