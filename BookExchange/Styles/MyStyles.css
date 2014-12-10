@@ -40,6 +40,10 @@ td {
     padding: 10px;
 }
 
+th {
+    padding-right: 30px;
+}
+
 /* Classes */
 
 .clearing {

@@ -10,31 +10,31 @@
         <tr>
 
             <td>Title: &nbsp
-            <asp:Label ID="lblTitle" runat="server"></asp:Label></td>            
+            <asp:Label ID="lblTitle" runat="server" CssClass="bold" ></asp:Label></td>            
         </tr>        
         <tr>
             <td>Author: &nbsp
-            <asp:Label ID="lblAuthor" runat="server"></asp:Label></td>
+            <asp:Label ID="lblAuthor" runat="server" CssClass="bold"></asp:Label></td>
         </tr>
         <tr>
             <td>ISBN: &nbsp
-            <asp:Label ID="lblISBN" runat="server"></asp:Label></td>
+            <asp:Label ID="lblISBN" runat="server" CssClass="bold"></asp:Label></td>
         </tr>
         <tr>
             <td>Description: &nbsp
-            <asp:Label ID="lblDescription" runat="server" TextMode="MultiLine"></asp:Label></td>
+            <asp:Label ID="lblDescription" runat="server" TextMode="MultiLine" CssClass="bold"></asp:Label></td>
         </tr>
         <tr>
             <td>Major: &nbsp
-            <asp:Label ID="lblMajor" runat="server"></asp:Label></td>
+            <asp:Label ID="lblMajor" runat="server" CssClass="bold"></asp:Label></td>
         </tr>
         <tr>
             <td>Expected Value: &nbsp
-            <asp:Label ID="lblExpectedValue" runat="server"></asp:Label></td>
+            <asp:Label ID="lblExpectedValue" runat="server" CssClass="bold"></asp:Label></td>
         </tr>
         <tr>
             <td>Condition: &nbsp
-            <asp:Label ID="lblCondition" runat="server"></asp:Label></td>
+            <asp:Label ID="lblCondition" runat="server" CssClass="bold"></asp:Label></td>
         </tr>  
     </table>
     <table>

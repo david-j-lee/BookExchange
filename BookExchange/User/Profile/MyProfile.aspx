@@ -41,7 +41,7 @@
                 </td>
             </tr>
             <tr>
-                <td><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/Profile/EditProfile.aspx">Edit my Profile</asp:HyperLink></td>
+                <td style="text-align: center"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/Profile/EditProfile.aspx">Edit my Profile</asp:HyperLink></td>
             </tr>
         </table>
     </div>    
@@ -56,19 +56,19 @@
                     <th></th>
                     <th>Book Offered</th>  
                     <th>My Book</th>                              
-                    <th>Requested Date</th>
+                    <th>Date</th>
                 </tr>
                 <asp:Repeater ID="Repeater4" runat="server" >
                     <ItemTemplate>                    
                         <tr>
                             <td><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl='<%# String.Concat("~/User/Post/ExchangeRequest.aspx?Id=", Eval("Id")) %>'>accept</asp:HyperLink></td>
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: left;">
                                 <asp:Label ID="Label4" runat="server" Text='<%# Eval ("urTitle") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: left;">
                                 <asp:Label ID="Label3" runat="server" Text='<%# Eval ("myTitle") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px">
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval ("RequestDate", "{0:d}") %>'></asp:Label>
                             </td>                            
                         </tr>
@@ -95,13 +95,13 @@
                                     NavigateUrl='<%# String.Concat("~/User/Post/AddEditBook.aspx?Id=", Eval("Id")) %>'>
                                 </asp:HyperLink>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: Left;">
                                 <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
                             </td>
                             <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px">
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval ("EnteredOn", "{0:d}") %>'></asp:Label>
                             </td>
                         </tr>
@@ -123,18 +123,18 @@
                 <tr style="padding: 4px 7px 2px 4px; text-align: center">
                     <th>My Book</th>
                     <th>Requested Book</th>                
-                    <th>Requested Date</th>
+                    <th>Date</th>
                 </tr>
                 <asp:Repeater ID="Repeater2" runat="server" >
                     <ItemTemplate>                    
                         <tr>                                                
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: Left;">
                                 <asp:Label ID="Label3" runat="server" Text='<%# Eval ("myTitle") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: Left;">
                                 <asp:Label ID="Label4" runat="server" Text='<%# Eval ("urTitle") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px">
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval ("RequestDate", "{0:d}") %>'></asp:Label>
                             </td>
                         </tr>
@@ -156,13 +156,16 @@
                 <asp:Repeater ID="Repeater3" runat="server" >
                     <ItemTemplate>                    
                         <tr>                                                
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: left;">
                                 <asp:Label ID="Label3" runat="server" Text='<%# Eval ("Title") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
+                            <td style="padding: 4px 7px 2px 4px; text-align: left;">
+                                <asp:Label ID="Label5" runat="server" Text='<%# Eval ("Author") %>'></asp:Label>
+                            </td>
+                            <td style="padding: 4px 7px 2px 4px; text-align: left;">
                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval ("Price") %>'></asp:Label>
                             </td>
-                            <td style="padding: 4px 7px 2px 4px">
+                            <td style="padding: 4px 7px 2px 4px; text-align: right;">
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval ("EnteredOn", "{0:d}") %>'></asp:Label>
                             </td>
                         </tr>

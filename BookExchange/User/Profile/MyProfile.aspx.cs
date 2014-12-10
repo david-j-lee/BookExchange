@@ -55,7 +55,7 @@ public partial class User_Profile_MyProfile : System.Web.UI.Page
                 var myRequests = from myPost in myEntity.Postings
                                  join trade in myEntity.TradeRequests on myPost.Id equals trade.TradePostingId
                                  join urPost in myEntity.Postings on trade.PostingId equals urPost.Id
-                                 where myPost.UserEmail == email
+                                 where myPost.UserEmail == email && urPost.TradersEmail == null
                                  orderby trade.RequestDate descending
                                  select new { myTitle = myPost.Title, urTitle = urPost.Title, trade.RequestDate };
 
