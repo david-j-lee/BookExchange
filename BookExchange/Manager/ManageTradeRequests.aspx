@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="Manager - ManageTradeRequests" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ManageTradeRequests.aspx.cs" Inherits="Manager_ManageTradeRequests" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+    .auto-style1 {
+        height: 23px;
+    }
+    .auto-style2 {
+        height: 41px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">    
     <h1>Manage Trade Requests</h1>
@@ -15,12 +23,12 @@
     </table>
     <table>
         <tr>
-            <th>Id</th>
-            <th>UserEmail</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>TradersEmail</th>
-            <th>Request Date</th>
+            <th class="auto-style1">Id</th>
+            <th class="auto-style1">UserEmail</th>
+            <th class="auto-style1">Title</th>
+            <th class="auto-style1">Author</th>
+            <th class="auto-style1">TradersEmail</th>
+            <th class="auto-style1">Request Date</th>
         </tr>
         <asp:Repeater ID="Repeater1" runat="server">
             <ItemTemplate>

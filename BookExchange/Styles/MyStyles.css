@@ -32,7 +32,7 @@ footer {
 }
 
 table {
-    margin: auto;
+    margin: 0px auto auto auto;
     padding: 20px;
 }
 
@@ -49,11 +49,17 @@ th {
 .clearing {
     clear: both;
 }
+.top {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 #sidebar {
     width: 200px;
     float: right;
-    background: #9eabd5;
-    margin-top: 0px;
+    background: #ebf2fb;
+    margin-top: auto;
+    margin-bottom: 50px;
 }
 
 .wrapper {    

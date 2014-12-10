@@ -29,6 +29,7 @@
                 </div>
                 <h1 class="headerTitle"><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Default.aspx">Book Exchange</asp:HyperLink></h1>                
             </header>
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
             <nav>
                 <div class="navLeft">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
@@ -41,7 +42,8 @@
                 <div class="clearing"></div>
                 <asp:ContentPlaceHolder id="MainContent" runat="server">
  
-        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+
+
         <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1" />                    
                 </asp:ContentPlaceHolder>
                 <div class="clearing"></div>
