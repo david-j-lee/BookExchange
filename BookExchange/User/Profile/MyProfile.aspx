@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td>
-                    Current College: &nbps
+                    Current College: &nbsp
                     <asp:Label ID="lblCurrentCollege" runat="server" CssClass="bold"></asp:Label>                    
                 </td>
             </tr>

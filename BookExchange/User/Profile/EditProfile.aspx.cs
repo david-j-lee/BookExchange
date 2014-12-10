@@ -11,13 +11,14 @@ public partial class User_Profile_EditProfile : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string email;
-        if (Session["email"] != null)
+        if (Session["email"] != null) // if user is logged in store the email
         {
             email = Session["email"].ToString();
         }
-        else
+        else // if user is not logged in dont store email
         {
             email = "";
+            Response.Redirect("~/Login.aspx");
         }
 
         if (!IsPostBack && email != "")

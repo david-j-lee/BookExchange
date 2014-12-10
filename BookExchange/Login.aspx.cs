@@ -25,7 +25,15 @@ public partial class Login : System.Web.UI.Page
             {
                 Session["email"] = _email;
                 Session["type"] = user.Type;
-                Response.Redirect("~/User/Profile/MyProfile.aspx");
+
+                if (user.Type == 0)
+                {
+                    Response.Redirect("~/User/Profile/MyProfile.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Manager/Default.aspx");
+                }
             }
             else
             {

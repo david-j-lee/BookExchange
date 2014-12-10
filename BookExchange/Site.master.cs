@@ -12,12 +12,13 @@ public partial class Site : System.Web.UI.MasterPage
     {
         if (Session["email"] != null)
         {
+            // if user is logged in
             HyperLink1.Text = "Sign Out";
             HyperLink1.NavigateUrl = "~/SignOut.aspx";
-            HyperLink8.NavigateUrl = "~/User/Profile/MyProfile.aspx";
+            
             HyperLink6.Visible = false;
             HyperLink8.Visible = true;
-
+            
             string email = Session["email"].ToString();
             using (BookExchangeEntities myEntity = new BookExchangeEntities())
             {
@@ -26,10 +27,22 @@ public partial class Site : System.Web.UI.MasterPage
                             select u).SingleOrDefault();
 
                 HyperLink8.Text = user.FirstName.ToString() + " " + user.LastName.ToString();
+
+                if (user.Type == 0)
+                {
+                    // if basic user
+                    HyperLink8.NavigateUrl = "~/User/Profile/MyProfile.aspx";                    
+                }
+                else
+                {
+                    // if manager
+                    HyperLink8.NavigateUrl = "~/Manager/Default.aspx";                    
+                }
             }
         }
         else
         {
+            // if user is not login
             HyperLink1.Text = "Sign In";
             HyperLink1.NavigateUrl = "~/Login.aspx";
             HyperLink6.Visible = true;

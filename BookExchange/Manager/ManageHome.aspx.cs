@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BookExchangeModel;
 
 public partial class Managing_Home : System.Web.UI.Page
 {
@@ -21,7 +22,32 @@ public partial class Managing_Home : System.Web.UI.Page
             }
             else
             {
-                //input on load code here
+                if (Session["type"] == "0") // if user is logged in store the email
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+
+                if (!IsPostBack && email != "")
+                {
+                    using (BookExchangeEntities myEntity = new BookExchangeEntities())
+                    {
+                        var user = (from u in myEntity.Users
+                                    where u.Email == email
+                                    select u).SingleOrDefault();
+
+                        if (user != null)
+                        {
+                            txtFirstName.Text = user.FirstName;
+                            txtLastName.Text = user.LastName;
+                            txtCurrentCollege.Text = user.CurrentCollege;
+                            txtCity.Text = user.City;
+                            txtPhone.Text = user.Phone;
+                            txtDescription.Text = user.Description;
+
+                            Image1.ImageUrl = user.ImageURL;
+                        }
+                    }
+                }
             }
         }
     }

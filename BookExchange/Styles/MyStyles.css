@@ -1,7 +1,7 @@
 ﻿/* Defaults */
 
 html {
-    background-color: #000;    
+    background-color: #808080;    
 }
 
 header {
@@ -94,7 +94,8 @@ td {
     }
 
 .body {
-    max-width: 1200px;    
+    min-height: 500px;
+    max-width: 1000px;    
     padding: 1px 40px 1px 40px;
     background-color: #ebf2fa;    
     margin: auto;
