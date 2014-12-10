@@ -39,18 +39,17 @@
     </table>
     <table>
         <tr>
-            <td><asp:DropDownList ID="ddlBooks" runat="server" DataSourceID="SqlDataSource1" DataTextField="Title" DataValueField="Id"></asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:BookExchangeConnectionString %>" 
-                    SelectCommand="SELECT * FROM [Postings] WHERE ([UserEmail] = @UserEmail AND [TradersEmail] is null) ORDER BY [Title]">
-                    <SelectParameters>
-                        <asp:SessionParameter Name="UserEmail" SessionField="email" Type="String" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
+            <td>
+                <asp:DropDownList ID="ddlBooks" runat="server"></asp:DropDownList>                
             </td>
         </tr>
         <tr>
             <td style="text-align: center;"><asp:Button ID="btnRequestTrade" runat="server" Text="Request a Trade" OnClick="btnRequestTrade_Click" /></td>            
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="lblRequestTradeMessage" runat="server" Text=""></asp:Label>
+            </td>
         </tr>
     </table>
 </asp:Content>

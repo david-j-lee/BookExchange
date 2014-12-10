@@ -12,6 +12,7 @@ public partial class SignOut : System.Web.UI.Page
         if (Session["email"] != null)
         {
             Session["email"] = null;
+            Session["type"] = null;
         }
         Response.Redirect("~/Default.aspx");
     }

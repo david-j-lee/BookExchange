@@ -46,38 +46,50 @@ public partial class Post_BookDetails : System.Web.UI.Page
 
 
         // load login user access controls
-
         if (Session["email"] == null) // check if logged in
         {
             btnRequestTrade.Visible = false;
             ddlBooks.Visible = false;
+            lblRequestTradeMessage.Visible = false;
         }
         else if (Session["email"].ToString() == posterEmail) // check if post is from you
         {
             btnRequestTrade.Visible = false;
             ddlBooks.Visible = false;
+            lblRequestTradeMessage.Visible = false;
         }
         else
         {
             using (BookExchangeEntities myEntity = new BookExchangeEntities())
             {
+                string myEmail = Session["email"].ToString();
                 var myBooks = from p in myEntity.Postings
-                              join t in myEntity.TradeRequests on p.Id equals t.PostingId into books
-                              where p.UserEmail == Session["email"].ToString()
+                              join t in myEntity.TradeRequests on p.Id equals t.TradePostingId into books
+                              where p.UserEmail == myEmail && p.TradersEmail == null
                               
                               from b in books.DefaultIfEmpty()
-                              
-                              select new { p.Title, p.Id };
+                              where b.TradePostingId == null
+                              select new { p.Title, p.Id, b.TradePostingId };
 
+                ddlBooks.DataSource = myBooks;                            
                 ddlBooks.DataTextField = "Title";
                 ddlBooks.DataValueField = "Id";
                 ddlBooks.DataBind();
+
+                if (myBooks.FirstOrDefault() == null)
+                {
+                    btnRequestTrade.Visible = false;
+                    ddlBooks.Visible = false;
+                    lblRequestTradeMessage.Visible = true;
+                    lblRequestTradeMessage.Text = "You do not have any books to trade.";
+                }
             }
         }
-
     }
+
     protected void btnRequestTrade_Click(object sender, EventArgs e)
     {
+        
         using (BookExchangeEntities myEntity = new BookExchangeEntities())
         {
             TradeRequest myTradeRequest;
@@ -95,6 +107,8 @@ public partial class Post_BookDetails : System.Web.UI.Page
                 myEntity.AddToTradeRequests(myTradeRequest);
 
                 myEntity.SaveChanges();
+
+                Response.Redirect("~/Search.aspx");
             }
         }
     }

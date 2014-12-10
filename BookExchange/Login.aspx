@@ -6,8 +6,7 @@
     <table>
         <tr>
             <td>Email</td>
-            <td><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
-            <td><asp:Label ID="lblError" runat="server" Text=""></asp:Label></td>
+            <td><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>            
         </tr>
         <tr>
             <td>Password</td>
@@ -16,6 +15,9 @@
         <tr>
             <td></td>
             <td style="text-align: center"><asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" /></td>            
+        </tr>
+        <tr>            
+            <td><asp:Label ID="lblError" runat="server" Text=""></asp:Label></td>            
         </tr>
         <tr>
             <td></td>
