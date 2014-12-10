@@ -27,5 +27,19 @@
             </td>
         </tr>
     </table>
+        <div id="top"> </div>
+        <div id="sidebar">
+        <h2 style="margin-top: 0px"></h2>
+            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowExpandCollapse="True" Height="30px" EnableClientScript="False" ExpandDepth="0" ImageSet="Arrows" MaxDataBindDepth="0" NodeIndent="5">
+                <LevelStyles>
+<asp:TreeNodeStyle CssClass="FirstLevelMenuItems" />
+</LevelStyles>
+
+            </asp:TreeView>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                <div class="clearing">&nbsp;</div>
+        </div>
+
+    </div>
 </asp:Content>
 
