@@ -30,16 +30,16 @@
         <div id="top"> 
         <div id="sidebar">
                 <div class="clearing">&nbsp;</div>
+<!-- REMOVED CAUSE BROKEN
             <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowExpandCollapse="True" Height="60px" ExpandDepth="2" MaxDataBindDepth="0" NodeIndent="1" BorderStyle="None">
                 <LevelStyles >
-<asp:TreeNodeStyle CssClass="FirstLevelMenuItems"  />
-</LevelStyles>
-
+                    <asp:TreeNodeStyle CssClass="FirstLevelMenuItems"  />
+                </LevelStyles>
             </asp:TreeView>
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+
+-->
         </div>
-
     </div>
-
 </asp:Content>
 
