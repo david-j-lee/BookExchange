@@ -32,8 +32,9 @@ footer {
 }
 
 table {
-    margin: 0px auto auto auto;
+    margin: 13px auto auto 0px;
     padding: 20px;
+    width: 303px;
 }
 
 td {
@@ -48,6 +49,7 @@ th {
 
 .clearing {
     clear: both;
+    height: 0px;
 }
 .top {
     margin-top: auto;
@@ -55,11 +57,13 @@ th {
 }
 
 #sidebar {
-    width: 200px;
+    width: 155px;
     float: right;
     background: #ebf2fb;
-    margin-top: auto;
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align:left;
+  
 }
 
 .wrapper {    
@@ -108,7 +112,7 @@ th {
     max-width: 1000px;    
     padding: 1px 40px 1px 40px;
     background-color: #ebf2fa;    
-    margin: auto;
+    margin: auto auto 0px 0px;
 }
 
 .bold {
@@ -118,3 +122,19 @@ th {
 .error {
     color: red;
 }
+
+#container {
+    width: 100%;
+    float: left;
+    margin-right: -300px;
+}
+
+#wrapper {
+}
+
+table {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    width: inherit;
+}
+

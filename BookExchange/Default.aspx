@@ -32,5 +32,12 @@
         </tr>
     </table>
     <div class="clearing"></div>
+    <div id="sidebar">
+<asp:Image id="Image5" runat="server"
+           AlternateText="Image text"
+           ImageAlign="left"
+           ImageUrl="images/ad.jpg"/>
+        </div>
+   
 </asp:Content>
 
