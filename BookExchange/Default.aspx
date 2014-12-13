@@ -15,28 +15,24 @@
     <br />
     <table style="margin: auto">
         <tr>
-            <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px" BorderStyle="Solid" /></td>
+            <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px" BorderStyle="Solid" BorderColor="#96A1C2" /></td>
             <td><asp:Label ID="Label1" runat="server" Text=""></asp:Label></td>                        
         </tr>        
         <tr><td> &nbsp</td></tr>
         <tr><td> &nbsp</td></tr>
         <tr>            
             <td><asp:Label ID="Label2" runat="server" Text=""></asp:Label></td>            
-            <td><asp:Image ID="Image2" runat="server" Height="300px" Width="300px" BorderStyle="Solid" /></td>
+            <td><asp:Image ID="Image2" runat="server" Height="300px" Width="300px" BorderStyle="Solid" BorderColor="#96A1C2" /></td>
         </tr>
         <tr><td> &nbsp</td></tr>
         <tr><td> &nbsp</td></tr>
         <tr>                        
-            <td><asp:Image ID="Image3" runat="server" Height="300px" Width="300px" BorderStyle="Solid" /></td>
+            <td><asp:Image ID="Image3" runat="server" Height="300px" Width="300px" BorderStyle="Solid" BorderColor="#96A1C2" /></td>
             <td><asp:Label ID="Label3" runat="server" Text=""></asp:Label></td>            
         </tr>
     </table>
     <div class="clearing"></div>
     <div id="sidebar">
-<asp:Image id="Image5" runat="server"
-           AlternateText="Image text"
-           ImageAlign="left"
-           ImageUrl="images/ad.jpg"/>
         </div>
    
 </asp:Content>
