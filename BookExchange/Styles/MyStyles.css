@@ -58,7 +58,7 @@ th {
 }
 
 #sidebar {
-    width: 339px;
+    width: 155px;
     float: right;
     background: #ebf2fb;
     margin-top: 0px;
@@ -110,8 +110,8 @@ th {
 
 .body {
     min-height: 500px;
-    max-width: 1400px;    
-    padding: 1px 41px 1px 1px;
+    max-width: 1000px;    
+    padding: 1px 40px 1px 40px;
     background-color: #ebf2fa;    
     margin: auto auto 0px 0px;
 }
@@ -136,7 +136,7 @@ th {
 table {
     margin: 0px 0px 0px 0px;
     padding: 0px;
-    width: 355px;
+    width: inherit;
 }
 
 #MainContent_Label1 {

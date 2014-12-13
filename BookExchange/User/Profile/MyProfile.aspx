@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <div style="float: left; width: 349px;">
+    <div style="float: left">
         <table>
             <tr>            
                 <td>
@@ -46,9 +46,9 @@
         </table>
     </div>    
 
-    <div style="float: right; margin-left: 72px; width: 962px;">
+    <div style="float: right; ">
 
-        <div style="padding: 0px">
+        <div style="padding: 50px">
             <h3 style="text-align: center">Trade Requests</h3>       
         
             <table style="padding: 0px;">

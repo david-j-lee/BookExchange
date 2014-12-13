@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
-  <siteMapNode url="~/" title="Users Sites" Font-Underline="true" description="Users Section">
+  <siteMapNode url="~/" title="Users Sites" description="Users Section">
         <siteMapNode url="~/User/Post/AddEditBook.aspx" title="Add and Edit Book"
         description="Add and Edit Book" />
         <siteMapNode url="~/User/Post/BookDetails.aspx" title="Book Details"
