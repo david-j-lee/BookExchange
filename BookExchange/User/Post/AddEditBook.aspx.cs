@@ -15,7 +15,7 @@ public partial class Post_AddEditBook : System.Web.UI.Page
         ddlCondition.Items.Add("Damaged");
         ddlCondition.Items.Add("Mint");
         ddlCondition.Items.Add("New");
-        txtExpectedValue.Text = "0";
+
 
         if (Session["email"] != null)
         {
