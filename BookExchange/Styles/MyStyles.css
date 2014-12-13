@@ -25,10 +25,6 @@ body {
     margin: 0px 0px 0px 0px;
 }
 
-h2 {
-    text-align: center;
-}
-
 footer {
     background-color: #9eabd5;
     color: #fff;    
@@ -117,7 +113,7 @@ th {
     max-width: 1000px;    
     padding: 1px 40px 1px 40px;
     background-color: #ebf2fa;    
-    margin: auto;
+    margin: auto auto 0px 0px;
 }
 
 .bold {
@@ -138,8 +134,7 @@ th {
 }
 
 table {
-    margin: auto;
-    margin-top: 50px;
+    margin: 0px 0px 0px 0px;
     padding: 0px;
     width: inherit;
 }

@@ -16,16 +16,6 @@
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
             </div>
                
-    <table id="featureContentTopFive">
-        <asp:Repeater ID="Repeater1" runat="server">
-            <ItemTemplate>
-                <tr>
-                    <td><asp:Image ID="imgTopFive" runat="server" /></td>                    
-                    <td><asp:Label ID="lblTopFive" runat="server" Text="Label"></asp:Label></td>
-                </tr>
-            </ItemTemplate>            
-        </asp:Repeater>
-    </table>
     <table aria-dropeffect="execute" aria-orientation="vertical" >
         <tr>
             <td>
