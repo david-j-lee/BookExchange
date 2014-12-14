@@ -22,9 +22,10 @@ public partial class Managing_ManageAbout : System.Web.UI.Page
             {
                 // load all home
                 var allAbout = from a in myEntity.Abouts
+                               orderby a.EnteredOn descending
                                select new { a.MessageOne, a.MessageTwo, a.MessageThree, a.ImageURLOne, a.ImageURLTwo, a.ImageURLThree, a.EnteredOn };
 
-                Repeater1.DataSource = allAbout;
+                Repeater1.DataSource = allAbout.Take(5);
                 Repeater1.DataBind();
 
                 // if update

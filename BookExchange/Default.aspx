@@ -5,9 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <table style="margin: auto; padding-top: 20px;">
         <tr>
-            <th>Search by book title!</th>
-        </tr>
-        <tr>
             <td><asp:TextBox ID="txtSearch" runat="server" Width="700px" Height="30px" Font-Size="16pt"></asp:TextBox></td>
             <td><asp:Button ID="btnSearch" runat="server" Text="Search" Width="100px" Height="40px" OnClick="btnSearch_Click" /></td>
         </tr>        

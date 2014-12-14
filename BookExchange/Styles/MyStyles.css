@@ -33,9 +33,8 @@ footer {
 }
 
 table {
-    margin: 13px auto auto 0px;
+    margin: auto;
     padding: 20px;
-    width: 303px;
 }
 
 td {
@@ -44,6 +43,14 @@ td {
 
 th {
     padding-right: 30px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
 }
 
 /* Classes */
@@ -55,16 +62,6 @@ th {
 .top {
     margin-top: auto;
     margin-bottom: auto;
-}
-
-#sidebar {
-    width: 155px;
-    float: right;
-    background: #ebf2fb;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    text-align:left;
-  
 }
 
 .wrapper {    
@@ -113,7 +110,7 @@ th {
     max-width: 1000px;    
     padding: 1px 40px 1px 40px;
     background-color: #ebf2fa;    
-    margin: auto auto 0px 0px;
+    margin: auto;
 }
 
 .bold {
@@ -124,19 +121,24 @@ th {
     color: red;
 }
 
+
+#wrapper {
+}
+
 #container {
     width: 100%;
     float: left;
     margin-right: -300px;
 }
 
-#wrapper {
-}
-
-table {
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
-    width: inherit;
+#sidebar {
+    width: 155px;
+    float: right;
+    background: #ebf2fb;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align:left;
+  
 }
 
 #MainContent_Label1 {

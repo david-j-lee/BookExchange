@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">    
-    <h1>Manage Home</h1>
+    <h2>Manage Home</h2>
     <table>
         <tr>
             <td>
@@ -47,6 +47,7 @@
             </td>
         </tr>
     </table>
+    <h3>Home Page History - Last 5 updates</h3>
     <table>
         <asp:Repeater ID="Repeater1" runat="server">
             <ItemTemplate>

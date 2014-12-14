@@ -26,7 +26,7 @@ public partial class Manager_AllPostings : System.Web.UI.Page
                 {
                     var postings = from p in myEntity.Postings
                                    orderby p.EnteredOn
-                                   select new { p.Id, p.UserEmail, p.Title, p.Author, p.TradersEmail, p.ImageURL };
+                                   select new { p.Id, p.UserEmail, p.Title, p.Author, p.TradersEmail, status = p.TradersEmail == null ? "Open" : "Closed"  };
                     Repeater1.DataSource = postings;
                     Repeater1.DataBind();
                 }
@@ -43,7 +43,7 @@ public partial class Manager_AllPostings : System.Web.UI.Page
                 var postings = from p in myEntity.Postings
                                orderby p.EnteredOn
                                where p.UserEmail == email
-                               select new { p.Id, p.UserEmail, p.Title, p.Author, p.TradersEmail, p.ImageURL };
+                               select new { p.Id, p.UserEmail, p.Title, p.Author, p.TradersEmail };
                 Repeater1.DataSource = postings;
                 Repeater1.DataBind();
             }
@@ -51,7 +51,7 @@ public partial class Manager_AllPostings : System.Web.UI.Page
             {
                 var postings = from p in myEntity.Postings
                                orderby p.EnteredOn
-                               select new { p.Id, p.UserEmail, p.Title, p.Author, p.TradersEmail, p.ImageURL };
+                               select new { p.Id, p.UserEmail, p.Title, p.Author, p.TradersEmail };
                 Repeater1.DataSource = postings;
                 Repeater1.DataBind();
             }
