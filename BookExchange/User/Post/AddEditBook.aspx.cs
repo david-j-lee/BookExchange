@@ -24,6 +24,10 @@ public partial class Post_AddEditBook : System.Web.UI.Page
             {
                 _id = Convert.ToInt32(Request.QueryString.Get("Id"));
             }
+            else
+            {
+                txtExpectedValue.Text = "0";
+            }
 
             // if update
             if (!IsPostBack && _id > -1)
