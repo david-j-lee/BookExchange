@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manager - ManageTradeRequests" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ManageTradeRequests.aspx.cs" Inherits="Manager_ManageTradeRequests" %>
+﻿<%@ Page Title="Manager - ManageTradeRequests" Language="C#" MasterPageFile="~/Manager.master" AutoEventWireup="true" CodeFile="ManageTradeRequests.aspx.cs" Inherits="Manager_ManageTradeRequests" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

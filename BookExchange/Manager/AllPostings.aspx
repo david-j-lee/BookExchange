@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manager - All Postings" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AllPostings.aspx.cs" Inherits="Manager_AllPostings" %>
+﻿<%@ Page Title="Manager - All Postings" Language="C#" MasterPageFile="~/Manager.master" AutoEventWireup="true" CodeFile="AllPostings.aspx.cs" Inherits="Manager_AllPostings" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

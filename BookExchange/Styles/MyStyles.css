@@ -22,7 +22,7 @@ nav {
 
 body {
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;    
 }
 
 footer {
@@ -30,19 +30,6 @@ footer {
     color: #fff;    
     padding: 1px 20px 1px 20px;
     text-align: right;
-}
-
-table {
-    margin: auto;
-    padding: 20px;
-}
-
-td {
-    padding: 10px;
-}
-
-th {
-    padding-right: 30px;
 }
 
 h2 {
@@ -59,6 +46,7 @@ h3 {
     clear: both;
     height: 0px;
 }
+
 .top {
     margin-top: auto;
     margin-bottom: auto;
@@ -110,8 +98,34 @@ h3 {
     max-width: 1000px;    
     padding: 1px 40px 1px 40px;
     background-color: #ebf2fa;    
-    margin: auto;
+    margin: auto;    
+    font-size: 14pt;
 }
+
+table {
+    margin: auto;
+    padding: 20px;
+}
+    table th {    
+        padding: 10px 30px 5px 30px;
+    }
+    table td {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+#treeViewManager table {
+    margin: 0;
+    padding: 0;
+}
+    #treeViewManager th {
+        padding: 0;
+        margin: 0;
+    }
+    #treeViewManager td {
+        margin: 0;
+        padding: 0;
+    }
 
 .bold {
     font-weight: bold;
@@ -121,6 +135,17 @@ h3 {
     color: red;
 }
 
+.center {
+    text-align: center;
+}
+
+.button {
+    font-size: 14pt;
+    padding: 4px 10px 2px 10px;
+    text-align: center;
+}
+
+/* Ids */
 
 #wrapper {
 }
@@ -137,8 +162,7 @@ h3 {
     background: #ebf2fb;
     margin-top: 0px;
     margin-bottom: 0px;
-    text-align:left;
-  
+    text-align:left;  
 }
 
 #MainContent_Label1 {
@@ -163,7 +187,6 @@ h3 {
     color:darkblue;
 }
 
-
 #MainContent_Label4 {
     font-size: 30px;
     letter-spacing: 2px;
@@ -181,7 +204,3 @@ h3 {
     letter-spacing: 2px;
     font: bold;
 }
-
-
-
-

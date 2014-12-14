@@ -34,7 +34,7 @@
             </nav>
             <div class="body">
                 <br />
-                <asp:SiteMapPath ID="SiteMapPath1" runat="server" ForeColor="White">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" ForeColor="White" SiteMapProvider="default" >
                     <RootNodeStyle ForeColor="Blue" />
                     <PathSeparatorStyle ForeColor ="Gray" />
                     <CurrentNodeStyle ForeColor="Black" />

@@ -1,16 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
   <siteMapNode url="~/" title="Home" description="Home Page">
-        <siteMapNode url="~/User/Post/AddEditBook.aspx" title="Add and Edit Book"
-          description="Add and Edit Book" />
-        <siteMapNode url="~/User/Post/BookDetails.aspx" title="Book Details"
-          description="BookDetails" />
-        <siteMapNode url="~/User/Post/ExchangeRequest.aspx" title="Exchange Request"
-          description="Exchange Request" />
-        <siteMapNode url="~/User/Profile/EditProfile.aspx" title="Edit Profile"
-          description="Edit Profile" />
-        <siteMapNode url="~/User/Profile/MyProfile.aspx" title="My Profile"
-          description="My Profile" />
-      </siteMapNode>
-  </siteMap>
+    <siteMapNode url="~/User/Post/AddEditBook.aspx" title="Add and Edit Book" description="Add and Edit Book" />
+    <siteMapNode url="~/User/Post/BookDetails.aspx" title="Book Details" description="BookDetails" />
+    <siteMapNode url="~/User/Post/ExchangeRequest.aspx" title="Exchange Request" description="Exchange Request" />
+    <siteMapNode url="~/User/Profile/EditProfile.aspx" title="Edit Profile" description="Edit Profile" />
+    <siteMapNode url="~/User/Profile/MyProfile.aspx" title="My Profile" description="My Profile" />    
+  </siteMapNode>
+</siteMap>
 

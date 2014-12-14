@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div style="float: left">
         <table>
-            <tr>            
+            <tr>
                 <td>
                     <asp:Image ID="Image1" runat="server" Height="300px" Width="250px" BorderStyle="Double" BorderWidth="15px" />
                 </td>
