@@ -24,12 +24,32 @@ public partial class _Default : System.Web.UI.Page
                 Image1.ImageUrl = homepage.ImageURLOne;
                 Image2.ImageUrl = homepage.ImageURLTwo;
                 Image3.ImageUrl = homepage.ImageURLThree;
-            }
+            }            
+        }
+
+        if (!Page.IsPostBack)
+        {
+            BindRepeater();
         }
     }
+
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         Session["search"] = txtSearch.Text;
         Response.Redirect("~/Search.aspx");
+    }
+
+    private void BindRepeater()
+    {
+        using (BookExchangeEntities myEntity = new BookExchangeEntities())
+        {
+            var featuredPostings = from f in myEntity.Postings
+                                   where f.TradersEmail == null && f.ImageURL != null
+                                   orderby f.EnteredOn descending
+                                   select new { f.Id, f.Title, f.Author, f.ISBN, f.ImageURL };
+
+            rptFeaturedContent.DataSource = featuredPostings.Take(10);
+            rptFeaturedContent.DataBind();
+        }
     }
 }
