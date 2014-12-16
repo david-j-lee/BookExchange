@@ -33,8 +33,7 @@
                     &nbsp;
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx"></asp:HyperLink>                    
                 </div>
-                <h1 class="headerTitle">
-                    <img alt="Logo" class="auto-style4" src="Images/LogoOnly.png" /></h1>                
+                <img alt="Logo" class="auto-style4" src="/BookExchange/Images/LogoOnly.png" />
             </header>
             <div class="body" style="padding: 0px; max-width: 2000px;">           
                 <div style="float: left; padding-left: 100px">

@@ -32,8 +32,7 @@
                     &nbsp;
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx"></asp:HyperLink>                    
                 </div>
-                <h1 class="headerTitle">
-                    <img alt="Logo" class="auto-style1" src="Images/LogoOnly.png" /></h1>
+                <img alt="Logo" class="auto-style1" src="/BookExchange/Images/LogoOnly.png" />
                 <nav>
                 <div class="navLeft">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>

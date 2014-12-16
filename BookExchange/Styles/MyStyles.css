@@ -8,7 +8,8 @@ html {
 header {
     background-color: #9eabd5;
     color: #fff;    
-    padding: 5px 10px 1px 25px;
+    padding: 0px;
+    margin: 0px;
     white-space: nowrap;
 }
 
