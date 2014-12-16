@@ -32,32 +32,33 @@
                     &nbsp;
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx"></asp:HyperLink>                    
                 </div>
-                <img alt="Logo" class="auto-style1" src="/BookExchange/Images/LogoOnly.png" />
+                <asp:HyperLink ID="title" runat="server" class="auto-style1" ImageUrl="~/Images/LogoOnly.png" NavigateUrl="~/Default.aspx"></asp:HyperLink>
                 <nav>
-                <div class="navLeft">
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Search.aspx">Search</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/User/Post/AddEditBook.aspx">Post</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
-                </div>                                
-            </nav>
-            </header>
-            <div class="body">
+                    <div class="navLeft">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Search.aspx">Search</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/User/Post/AddEditBook.aspx">Post</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
+                    </div>                                
+                </nav>
+            </header>            
+            <div id="body">
                 <br />
                 <asp:SiteMapPath ID="SiteMapPath1" runat="server" ForeColor="White" SiteMapProvider="default" >
                     <RootNodeStyle ForeColor="Blue" />
                     <PathSeparatorStyle ForeColor ="Gray" />
                     <CurrentNodeStyle ForeColor="Black" />
                 </asp:SiteMapPath>
-                <div class="clearing"></div>
-                <asp:ContentPlaceHolder id="MainContent" runat="server">                
-
-                </asp:ContentPlaceHolder>
-                <div class="clearing"></div>
-            </div>
+                <div id="mainContent">
+                    <asp:ContentPlaceHolder id="MainContent" runat="server">                
+                        <!-- code from other pages goes here --> 
+                    </asp:ContentPlaceHolder>
+                </div>             
+                <div class="clearing"></div>                
+            </div>                        
             <footer>
                 <p>brought to you by <span class="auto-style2">
-                <asp:HyperLink ID="HyperLink7" NavigateUrl="https://www.facebook.com/BlokClubDjsInc" Text="DJ Inc." Target="_blank" runat="server" />
+                <asp:HyperLink ID="HyperLink7" NavigateUrl="http://github.com/seabear622/bookexchange" Text="DJ Inc." Target="_blank" runat="server" />
                 </span></p>
             </footer>
         </div>

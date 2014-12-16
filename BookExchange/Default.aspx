@@ -14,7 +14,10 @@
         </tr>
     </table>
     <h2><asp:Label ID="Label4" runat="server" Text="Label" Font-Size="32pt">Welcome to the Book Exchange</asp:Label></h2>
-    <!-- Start of featured content java -->    
+    <!-- 
+        Start of featured content java
+        Java slider was taken from http://www.codeproject.com/Articles/785972/ASP-NET-Repeater-with-jQuery-Slider
+    -->    
     <div class="container demo-1">
         <div class="main">
             <ul id="carousel" class="elastislide-list">

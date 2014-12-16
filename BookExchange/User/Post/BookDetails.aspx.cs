@@ -39,13 +39,14 @@ public partial class Post_BookDetails : System.Web.UI.Page
                     lblAuthor.Text = posting.Author;
                     lblExpectedValue.Text = posting.Price.ToString();
                     lblCondition.Text = posting.Condition;
+                    lblUserEmail.Text = posting.UserEmail;
                     Image1.ImageUrl = posting.ImageURL;
                 }                
             }
         }
 
 
-        // load login user access controls
+        // load logged in user access controls
         if (Session["email"] == null) // check if logged in
         {
             btnRequestTrade.Visible = false;
@@ -60,7 +61,8 @@ public partial class Post_BookDetails : System.Web.UI.Page
         }
         else
         {
-            using (BookExchangeEntities myEntity = new BookExchangeEntities())
+            // data bind the drop down list with users open book postings
+            using (BookExchangeEntities myEntity = new BookExchangeEntities()) 
             {
                 string myEmail = Session["email"].ToString();
                 var myBooks = from p in myEntity.Postings
@@ -88,8 +90,7 @@ public partial class Post_BookDetails : System.Web.UI.Page
     }
 
     protected void btnRequestTrade_Click(object sender, EventArgs e)
-    {
-        
+    {        
         using (BookExchangeEntities myEntity = new BookExchangeEntities())
         {
             TradeRequest myTradeRequest;

@@ -48,7 +48,7 @@
                 <table>
                     <tr>
                         <td></td>
-                        <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px"/></td>            
+                        <td><asp:Image ID="Image1" runat="server" Height="400px" Width="300px"/></td>            
                     </tr>
                     <tr>
                         <td></td>

@@ -1,8 +1,8 @@
 ﻿/* Defaults */
 
 html {
-    background-color: #0e0633
-        
+    background-color: #f3f6fa;
+    /* previous color #0e0633 */
 }
 
 header {
@@ -53,12 +53,12 @@ h3 {
     margin-bottom: auto;
 }
 
-.wrapper {    
-    min-width: 1500px;
+.wrapper {        
 }
 
 .registerOrSignIn {
     float: right;
+    padding: 5px 15px 0px 0px;
 }
 
     .registerOrSignIn a:link, .registerOrSignIn a:visited, .registerOrSignIn a:active {
@@ -94,13 +94,18 @@ h3 {
         font-family: Calibri;
     }
 
-.body {
+#body {
     min-height: 500px;
-    max-width: 1500px;
-    padding: 1px 40px 1px 40px;
-    background-color: #ebf2fa;    
-    margin: auto;    
+    padding: 1px 100px 1px 100px;
+    background-color: #edf5fe;    
+    margin: auto;
     font-size: 14pt;
+    width: 1000px;
+}
+
+#mainContent {
+    max-width: 1000px;    
+    margin: auto;
 }
 
 table {

@@ -8,7 +8,7 @@
             <td>
                 <table>
                     <tr>        
-                        <td><asp:Image ID="Image1" runat="server" Height="300px" Width="300px" BorderStyle="Solid"/></td>   
+                        <td><asp:Image ID="Image1" runat="server" Height="400px" Width="300px" BorderStyle="Solid"/></td>   
                     </tr>
                 </table>
             </td>
@@ -41,6 +41,10 @@
                     <tr>
                         <td>Condition: &nbsp
                         <asp:Label ID="lblCondition" runat="server" CssClass="bold"></asp:Label></td>
+                    </tr>  
+                    <tr>
+                        <td>Posted By: &nbsp
+                        <asp:Label ID="lblUserEmail" runat="server" CssClass="bold"></asp:Label></td>
                     </tr>  
                 </table>
             </td>

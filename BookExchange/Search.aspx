@@ -22,12 +22,12 @@
                     <th>Author</th>
                     <th>ISBN</th>
                     <th>Condition</th>
-                    <th>Price</th>
+                    <th>Price</th>                    
                 </tr>            
-                <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
+                <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>                
             </table>
             <div class="center">
-                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="5">
+                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="10">
                     <Fields>
                         <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
                             ShowNextPageButton="false" />
@@ -39,19 +39,19 @@
         </LayoutTemplate>
         <GroupTemplate>
             <tr>
-                <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
+                <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>                  
             </tr>
         </GroupTemplate>
         <ItemTemplate>
             <tr>
-                <td><asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageURL") %>' Width="75px" Height="75px" BorderStyle="Solid" BorderWidth="1px" /></td>
-                <td><asp:Label ID="Label7" runat="server" Text='<%# Eval("EnteredOn", "{0:d}") %>'></asp:Label></td>
+                <td><asp:Image ID="imgPicture" runat="server" ImageUrl='<%# Eval("ImageURL") %>' Width="75px" Height="75px" BorderStyle="Solid" BorderWidth="1px" /></td>
+                <td><asp:Label ID="lblEnteredOn" runat="server" Text='<%# Eval("EnteredOn", "{0:d}") %>'></asp:Label></td>
                 <td><asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("Title")%>' NavigateUrl='<%# String.Concat("~/User/Post/BookDetails.aspx?Id=", Eval("Id")) %>' Width="200px" ></asp:HyperLink></td>
-                <td><asp:Label ID="Label2" runat="server" Text='<%# Eval("Author") %>'></asp:Label></td>
-                <td><asp:Label ID="Label3" runat="server" Text='<%# Eval("ISBN") %>'></asp:Label></td>                
-                <td><asp:Label ID="Label5" runat="server" Text='<%# Eval("Condition") %>'></asp:Label></td>
-                <td style="text-align: right"><asp:Label ID="Label6" runat="server" Text='<%# Eval("Price") %>'></asp:Label></td>
-            </tr>
+                <td><asp:Label ID="lblAuthor" runat="server" Text='<%# Eval("Author") %>'></asp:Label></td>
+                <td><asp:Label ID="lblISBN" runat="server" Text='<%# Eval("ISBN") %>'></asp:Label></td>                
+                <td><asp:Label ID="lblCondition" runat="server" Text='<%# Eval("Condition") %>'></asp:Label></td>
+                <td style="text-align: right"><asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label></td>                                
+            </tr>            
         </ItemTemplate>
     </asp:ListView>
     &nbsp;
