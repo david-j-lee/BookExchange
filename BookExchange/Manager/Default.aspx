@@ -4,7 +4,7 @@
     <link href="../Styles/MyStyles.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">    
-    <h2>Manager Home Page</h2>
+    <h2>Administrator Home Page</h2>
     <p>
 
     </p>
