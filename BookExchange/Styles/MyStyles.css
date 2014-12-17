@@ -46,6 +46,9 @@ h3 {
 .clearing {
     clear: both;
     height: 0px;
+    padding: 0px;
+    margin-top:auto;
+    margin-bottom:auto;
 }
 
 .top {
@@ -209,4 +212,42 @@ table {
     font-size: 30px;
     letter-spacing: 2px;
     font: bold;
+}
+
+#sidebarone {
+    width: 200px;
+    float: right;
+    background-color: #9EABD5;
+}
+#sidebarone table {
+    margin: 0;
+    padding: 0;
+}
+    #sidebarone th {
+        padding: 0;
+        margin: 0;
+    }
+    #sidebarone td {
+        margin: 0;
+        padding: 0;
+    }
+
+.clearingone {
+    clear: both;
+    height: 0px;
+}
+
+#containerone {
+    width: 100%;
+    float: left;
+    margin-right: -200px;
+}
+
+#maincontentone {
+    margin-right: 200px;
+    background-color: #ebf2fa;
+}
+
+#wrapperone {
+    background-color: #9eabd5;
 }
