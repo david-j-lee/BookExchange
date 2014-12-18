@@ -20,14 +20,15 @@ public partial class Manager_Default : System.Web.UI.Page
             {
                 Response.Redirect("~/Default.aspx");
             }
-            else
+
+            if (!Page.IsPostBack)
             {
-                //input on load code here
+                BindRepeater();
             }
         }
     }
-
-private void BindRepeater()
+    
+    private void BindRepeater()
     {
         using (BookExchangeEntities myEntity = new BookExchangeEntities())
         {
@@ -41,3 +42,5 @@ private void BindRepeater()
         }
     }
 }
+
+
