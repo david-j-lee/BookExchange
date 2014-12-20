@@ -1,13 +1,15 @@
 ﻿/* Defaults */
 
 html {
-    background-color: #808080;    
+    background-color: #f3f6fa;
+    /* previous color #0e0633 */
 }
 
 header {
     background-color: #9eabd5;
     color: #fff;    
-    padding: 5px 10px 1px 25px;
+    padding: 0px;
+    margin: 0px;
     white-space: nowrap;
 }
 
@@ -21,7 +23,7 @@ nav {
 
 body {
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;    
 }
 
 footer {
@@ -31,43 +33,35 @@ footer {
     text-align: right;
 }
 
-table {
-    margin: 0px auto auto auto;
-    padding: 20px;
+h2 {
+    text-align: center;
 }
 
-td {
-    padding: 10px;
-}
-
-th {
-    padding-right: 30px;
+h3 {
+    text-align: center;
 }
 
 /* Classes */
 
 .clearing {
     clear: both;
+    height: 0px;
+    padding: 0px;
+    margin-top:auto;
+    margin-bottom:auto;
 }
+
 .top {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-#sidebar {
-    width: 200px;
-    float: right;
-    background: #ebf2fb;
-    margin-top: auto;
-    margin-bottom: 50px;
-}
-
-.wrapper {    
-    min-width: 1000px;    
+.wrapper {        
 }
 
 .registerOrSignIn {
     float: right;
+    padding: 5px 15px 0px 0px;
 }
 
     .registerOrSignIn a:link, .registerOrSignIn a:visited, .registerOrSignIn a:active {
@@ -103,13 +97,44 @@ th {
         font-family: Calibri;
     }
 
-.body {
+#body {
     min-height: 500px;
+    padding: 1px 100px 1px 100px;
+    background-color: #edf5fe;    
+    margin: auto;
+    font-size: 14pt;
+    width: 1000px;
+}
+
+#mainContent {
     max-width: 1000px;    
-    padding: 1px 40px 1px 40px;
-    background-color: #ebf2fa;    
     margin: auto;
 }
+
+table {
+    margin: auto;
+    padding: 20px;
+}
+    table th {    
+        padding: 10px 30px 5px 30px;
+    }
+    table td {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+#treeViewManager table {
+    margin: 0;
+    padding: 0;
+}
+    #treeViewManager th {
+        padding: 0;
+        margin: 0;
+    }
+    #treeViewManager td {
+        margin: 0;
+        padding: 0;
+    }
 
 .bold {
     font-weight: bold;
@@ -117,4 +142,112 @@ th {
 
 .error {
     color: red;
+}
+
+.center {
+    text-align: center;
+}
+
+.button {
+    font-size: 14pt;
+    padding: 4px 10px 2px 10px;
+    text-align: center;
+}
+
+/* Ids */
+
+#wrapper {
+}
+
+#container {
+    width: 100%;
+    float: left;
+    margin-right: -300px;
+}
+
+#sidebar {
+    width: 155px;
+    float: right;
+    background: #ebf2fb;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align:left;  
+}
+
+#MainContent_Label1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font: bold;
+    text-align: left;
+    color:darkblue;
+}
+
+#MainContent_Label2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font: bold;
+    color:darkblue;
+}
+
+#MainContent_Label3 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font: bold;
+    color:darkblue;
+}
+
+#MainContent_Label4 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font: bold;
+}
+
+#MainContent_Label5 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font: bold;
+}
+
+#MainContent_Label6 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font: bold;
+}
+
+#sidebarone {
+    width: 200px;
+    float: right;
+    background-color: #9EABD5;
+}
+#sidebarone table {
+    margin: 0;
+    padding: 0;
+}
+    #sidebarone th {
+        padding: 0;
+        margin: 0;
+    }
+    #sidebarone td {
+        margin: 0;
+        padding: 0;
+    }
+
+.clearingone {
+    clear: both;
+    height: 0px;
+}
+
+#containerone {
+    width: 100%;
+    float: left;
+    margin-right: -200px;
+}
+
+#maincontentone {
+    margin-right: 200px;
+    background-color: #ebf2fa;
+}
+
+#wrapperone {
+    background-color: #9eabd5;
 }

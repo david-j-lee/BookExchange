@@ -1,17 +1,9 @@
-﻿<%@ Page Title="Manager - ManageTradeRequests" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ManageTradeRequests.aspx.cs" Inherits="Manager_ManageTradeRequests" %>
+﻿<%@ Page Title="Manager - ManageTradeRequests" Language="C#" MasterPageFile="~/Manager.master" AutoEventWireup="true" CodeFile="ManageTradeRequests.aspx.cs" Inherits="Manager_ManageTradeRequests" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
-    .auto-style1 {
-        height: 23px;
-    }
-    .auto-style2 {
-        height: 41px;
-    }
-</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">    
-    <h1>Manage Trade Requests</h1>
+    <h2>Manage Trade Requests</h2>
     <table>
         <tr>
             <th>Search by email</th>
@@ -23,7 +15,6 @@
     </table>
     <table>
         <tr>
-            <th class="auto-style1">Id</th>
             <th class="auto-style1">UserEmail</th>
             <th class="auto-style1">Title</th>
             <th class="auto-style1">Author</th>
@@ -33,7 +24,6 @@
         <asp:Repeater ID="Repeater1" runat="server">
             <ItemTemplate>
                 <tr>                    
-                    <td><asp:Label ID="Label4" runat="server" Text='<%# Eval("Id") %>'></asp:Label></td>
                     <td><asp:Label ID="Label1" runat="server" Text='<%# Eval("myEmail") %>'></asp:Label></td>
                     <td><asp:Label ID="Label2" runat="server" Text='<%# Eval("Title") %>'></asp:Label></td>
                     <td><asp:Label ID="Label7" runat="server" Text='<%# Eval("Author") %>'></asp:Label></td>

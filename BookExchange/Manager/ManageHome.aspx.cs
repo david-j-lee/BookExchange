@@ -22,9 +22,10 @@ public partial class Managing_Home : System.Web.UI.Page
             {
                 // load all home
                 var allHome = from h in myEntity.Homes
+                              orderby h.EnteredOn descending
                               select new { h.MessageOne, h.MessageTwo, h.MessageThree, h.ImageURLOne, h.ImageURLTwo, h.ImageURLThree, h.EnteredOn };
 
-                Repeater1.DataSource = allHome;
+                Repeater1.DataSource = allHome.Take(5);
                 Repeater1.DataBind();
 
                 // if update

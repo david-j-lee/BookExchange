@@ -15,7 +15,7 @@ public partial class Post_AddEditBook : System.Web.UI.Page
         ddlCondition.Items.Add("Damaged");
         ddlCondition.Items.Add("Mint");
         ddlCondition.Items.Add("New");
-        txtExpectedValue.Text = "0";
+
 
         if (Session["email"] != null)
         {
@@ -23,6 +23,10 @@ public partial class Post_AddEditBook : System.Web.UI.Page
             if (!string.IsNullOrEmpty(Request.QueryString.Get("Id")))
             {
                 _id = Convert.ToInt32(Request.QueryString.Get("Id"));
+            }
+            else
+            {
+                txtExpectedValue.Text = "0";
             }
 
             // if update

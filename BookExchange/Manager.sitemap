@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Manager/Default.aspx" title="Home" description="Manager Home Page">
+    <siteMapNode url="~/Manager/ManageHome.aspx" title="Manage Home" description="Manage information on the home page" />
+    <siteMapNode url="~/Manager/ManageAbout.aspx" title="Manage About" description="Manage information on the about page" />
+    <siteMapNode url="~/Manager/ManageUsers.aspx" title="View Users" description="View all users" />
+    <siteMapNode url="~/Manager/AllPostings.aspx" title="View Postings" description="View all postings" />
+    <siteMapNode url="~/Manager/ManageTradeRequests.aspx" title="View Trade Requests" description="View all trade requests" />
+  </siteMapNode>
+</siteMap>

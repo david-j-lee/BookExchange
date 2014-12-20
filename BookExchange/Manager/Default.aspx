@@ -1,45 +1,36 @@
-﻿<%@ Page Title="Manager - Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Manager_Default" %>
+﻿<%@ Page Title="Manager - Home Page" Language="C#" MasterPageFile="~/manager.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Manager_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="stylesheet" type="text/css" href="../Styles/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/elastislide.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/custom.css" />
+    <script src="../js/modernizr.custom.17475.js"></script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <h1>Manager Home Page</h1>
-    <table>
-        <tr>
-            <td>
-                <ul>
-                    <li>
-                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Manager/ManageHome.aspx">Manage Home</asp:HyperLink>
-                    </li>
-                    <li>
-                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Manager/ManageAbout.aspx">Manage About</asp:HyperLink>
-                    </li>
-                    <li>
-                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Manager/ManageUsers.aspx">Manage Users</asp:HyperLink>
-                    </li>
-                    <li>
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Manager/AllPostings.aspx">All Postings</asp:HyperLink>
-                    </li>        
-                    <li>
-                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Manager/ManageTradeRequests.aspx">Trade Requests</asp:HyperLink>
-                    </li>                 
-                </ul>
-            </td>
-        </tr>
-    </table>
-        <div id="top"> 
-        <div id="sidebar">
-                <div class="clearing">&nbsp;</div>
-<!-- REMOVED CAUSE BROKEN
-            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowExpandCollapse="True" Height="60px" ExpandDepth="2" MaxDataBindDepth="0" NodeIndent="1" BorderStyle="None">
-                <LevelStyles >
-                    <asp:TreeNodeStyle CssClass="FirstLevelMenuItems"  />
-                </LevelStyles>
-            </asp:TreeView>
-                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
-
--->
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">    
+    <h2><asp:Label ID="Label4" runat="server" Text="Label" Font-Size="32pt">Administrator Home Page</asp:Label></h2>
+    <!-- 
+        Start of featured content java
+        Java slider was taken from http://www.codeproject.com/Articles/785972/ASP-NET-Repeater-with-jQuery-Slider
+    -->    
+    <div class="container demo-2">
+        <div class="main">
+            <ul id="carousel" class="elastislide-list">
+                <asp:Repeater ID="rptFeaturedContent" runat="server">
+                    <ItemTemplate>
+                        <li>
+                            <a href = '<%# String.Concat("/BookExchange/User/Post/BookDetails.aspx?Id=", Eval("Id")) %>'>
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageURL")%>' />
+                            </a>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
         </div>
     </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquerypp.custom.js"></script>
+    <script type="text/javascript" src="../js/jquery.elastislide.js"></script>
+    <script type="text/javascript"> $('#carousel').elastislide();</script>
+    <!-- end of featured content java -->
+    <div class="clearing"></div>  
 </asp:Content>
-
